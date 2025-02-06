@@ -1,0 +1,115 @@
+---
+title: 'Final Project - Step 1 (8 Points)'
+subtitle: "PSTAT126: Regression Analysis, Winter 2025" 
+
+author:
+    affiliations:
+      - name: "Winter 2025"
+affiliation-title: "Quarter"
+format: 
+ pdf: 
+    latex_engine: xelatex
+    geometry: "letterpaper, margin=0.3in"
+    code-fold: true
+    code-line-numbers: true
+    code-copy: true
+    code-tools: true
+    self-contained: true
+    toc: false
+    toc-location: left
+    number-sections: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message =  FALSE)
+knitr::opts_chunk$set(warning =  FALSE)
+knitr::opts_chunk$set(error =  FALSE)
+bfcolor <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
+  } else x
+}
+```
+
+:::{.callout-caution}
+# Due Date
+The deadline for this step is: Friday, January 31 at 11:59 PM.
+:::
+
+:::callout
+# Formation of groups:
+<div style="text-align: center">
+<span style="color: blue;"> **GROUP NAME **</span> 
+</div>
+
+- Abbas Maheryar    (amaheryar)
+- Cyrus Mohammadian    (cmohammadian)
+- Maya Hoffstadt    (mayahoffstadt)
+- Tasha Lee    (tashalee)
+- Angelina Song    (angelinasong)
+:::
+
+ 
+
+
+
+# Tentative Role Distribution Table
+
+| Name                 | Responsibilities                                           |
+|-----------------------|-----------------------------------------------------------|
+ |Abbas Maheryar |Data Cleaning|
+ |Cyrus Mohammadian |Modeling|
+ |Maya Hoffstadt |Group/meeting management, documentation|
+ |Tasha Lee |Model optimization|
+ |Angelina Song |Write up, model selection|
+
+# Data Information
+
+  **Data Name/Title**: Estimation of Obesity Levels Based On Eating Habits and Physical Condition 
+  
+  **Author/Owner**: Fabio Mendoza Palechor, Alexis De la Hoz Manotas. 2019
+  
+  **Date of Publication**: 2019
+  
+  **Publication Venue**: UCI
+  
+  **Retrieval Date**: 01/30/2025
+ 
+  **Link**: [Website](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition)
+
+
+# Variable discription:
+`r bfcolor("Add your answer here", "red")` \
+
+|Name | Label | Type | Categories | No. of valid obs.|
+|----- |----------------------------| ------ | -------------------------- | ----------|
+|Gender | gender	| binary	| male/female	|   2111	|
+|Age | age in years	| continuous	| 	|  2111 	|
+|Height | height	| continuous	| 	|   2111	|
+|Weight | weight	| continuous	| 	|   2111	|
+|family history with overweight | has overweight family member	| binary	|2 	|   2111	|
+|FAVC | Do you eat high caloric food frequently?	| Binary| “no”,“yes”|   2111|
+|FCVC | Do you usually eat vegetables in your meals?| Integer| |   2111	|
+|NCP | 	| How many main meals do you have daily?	| Continuous	| 2111|
+|CAEC | Do you eat any food between meals?| Categorical	| Sometimes”,"Frequently","Always","no"|   2111|
+|SMOKE | Do you smoke?| Binary| “no”,“yes”|   2111|
+|CH2O | Consumption of Water| Continuous	| 	|   2111	|
+|SCC |  Count Calories?	| Binary	| “no”, “yes”  	|2111|
+|FAF | Frequency of Physical Activity	 	| Continuous 	| 	| 2111  	|
+|TUE | Time Using Electronics		| Integer	| 	| 2111  	|
+|CALC | Consumption of Alcohol	 	| Categorical	| “no”,”Sometimes”,”Frequently”,”Always”	| 2111  	|
+|MTRANS | Method of Transportation 	| Categorical	| “Walking”, “Automobile”, “Motorbike”, “Bike”, “Public_Transportation”	| 2111  	|
+|NObeyesdad | Obesity Level			| Categorical	| “Insufficient_Weight”, “Normal_Weight”, “Overweight_Level_I”, “Overweight_Level_II”, “Obesity_Type_I”, “Obesity_Type_II”	| 2111  	|
+
+
+
+# Initial Insights:
+`r bfcolor("Add your answer here", "red")` \
+
+- Height and weight might be correlated variables. We will have to take this into account when setting up our regression model
+- Family history of obesity seems like a variable that would affect the response, obesity level.
+- Age and smoking might be correlated since younger people tend to not smoke. Same with alcohol consumption
+- Method of transportation could be affected by age. Older people might be less mobile, and will have to resort to cars.
+- Many behavioral factors (5+) that could be used for linear regression: FAVC, FCVC, MTRANS, TUES 
+“77% of the data was generated synthetically using the Weka tool and the SMOTE filter, 23% of the data was collected directly from users through a web platform.”
