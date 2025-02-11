@@ -1,0 +1,105 @@
+---
+title: 'Final Project - Step 2 (20 Points)'
+subtitle: "PSTAT126: Regression Analysis" 
+
+author:
+  - name: "Ali Abuzaid"
+    affiliations:
+      - name: "Winter 2025"
+affiliation-title: "Quarter"
+format: 
+ pdf: 
+    latex_engine: xelatex
+    geometry: "letterpaper, margin=0.3in"
+    code-fold: true
+    code-line-numbers: true
+    code-copy: true
+    code-tools: true
+    self-contained: true
+    toc: false
+    toc-location: left
+    number-sections: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message =  FALSE)
+knitr::opts_chunk$set(warning =  FALSE)
+knitr::opts_chunk$set(error =  FALSE)
+bfcolor <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
+  } else x
+}
+```
+
+
+:::callout
+<div style="text-align: center">
+<span style="color: blue;"> **STUDENT NAME **</span> 
+</div>
+- STUDENT 1    (NetID 1)
+- STUDENT 2    (NetID 2)
+- STUDENT 3    (NetID 3)
+- STUDENT 4    (NetID 4)
+- STUDENT 5    (NetID 5)
+:::
+
+
+::: {.callout-caution}
+## Due Date
+The deadline for this step is **February 14, 2025**.
+:::
+
+:::{.callout-tip}
+## Before Proceeding to Step 2
+Please carefully review any comments or feedback on Step 1. If you have any questions or need clarification, reach out to the TA for assistance. Ensuring a clear understanding of Step 1 will help you complete the next phase successfully.
+:::
+
+
+# Step 2: Research Questions EDA, and Simple Linear Regression
+
+
+## `r bfcolor("Research Questions", "red")` \ 
+
+**Question 1**
+
+
+**Question 2**
+
+**Question 3**
+
+## `r bfcolor("Hypotheses", "red")` \ 
+
+**Hypothesis 1**
+
+
+**Hypothesis 2**
+
+
+
+
+
+## `r bfcolor(" Exploratory Data Analysis (EDA)", "red")` \  
+
+### Data Cleaning
+
+
+
+### Descriptive Statistics
+
+
+### Data Visualization
+
+
+## `r bfcolor("Simple Linear Regression", "red")` \ 
+
+### Hypothesis
+
+### Assumptions of Linearity
+
+### Test of hypothesis
+
+### Goodness-of-fit
+
+### Conclusion
