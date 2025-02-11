@@ -62,10 +62,10 @@ Please carefully review any comments or feedback on Step 1. If you have any ques
 
 ## `r bfcolor("Research Questions", "red")` \ 
 
-**Question 1**
+**How does family history with obesity affect BMI?**
 
 
-**Question 2**
+**How do eating habits (FAVC, FCVC, NCP, CAEC) affect BMI?**
 
 **Question 3**
 
