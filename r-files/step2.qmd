@@ -82,10 +82,22 @@ obesityData <- read.csv("../data/BMI_data.csv")
 
 ## `r bfcolor("Hypotheses", "red")` \ 
 
-**Hypothesis 1**
+### Hypothesis 1
+$$
+\begin{align}
+H_0&: \text{Family history does not affect BMI} \\
+H_A&: \text{There is a significant relationship between family history and BMI}
+\end{align}
+$$
 
 
 **Hypothesis 2**
+$$
+\begin{align}
+H_0&: \text{No particular eating habit has any effect on BMI} \\
+H_A&: \text{At least 1 eating habit has a significant effect on BMI}
+\end{align}
+$$
 
 
 
