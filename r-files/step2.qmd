@@ -38,7 +38,7 @@ bfcolor <- function(x, color) {
 <div style="text-align: center">
 <span style="color: blue;"> **STUDENT NAME **</span> 
 </div>
-- STUDENT 1    (NetID 1)
+- Tasha Lee    (tashalee)
 - STUDENT 2    (NetID 2)
 - STUDENT 3    (NetID 3)
 - STUDENT 4    (NetID 4)
@@ -61,6 +61,17 @@ Please carefully review any comments or feedback on Step 1. If you have any ques
 
 
 ## `r bfcolor("Research Questions", "red")` \ 
+
+```{r}
+# Load packages
+library(knitr)
+library(ggplot2)
+library(dplyr)
+
+# Input data
+obesityData <- read.csv("../data/BMI_data.csv")
+```
+
 
 **How does family history with obesity affect BMI?**
 
@@ -95,11 +106,79 @@ Please carefully review any comments or feedback on Step 1. If you have any ques
 ## `r bfcolor("Simple Linear Regression", "red")` \ 
 
 ### Hypothesis
+We would like to perform simple linear regression of BMI (`BMI`) on frequency of physical activity (`FAF`). Our hypothesis are as follows:
+$$
+\begin{aligned}
+H_0&: \beta_1=0\\
+H_A&: \beta_1\neq0 \text{ ; where }\beta_1\text{ is the slope coefficient}
+\end{aligned}
+$$
+Thus, the null hypothesis states that there is no linear relationship between BMI and frequency of physical activity and the alternative hypothesis is that there exists a linear relationship between BMI and frequency of physical activity.
 
 ### Assumptions of Linearity
+Before proceeding with our simple linear regression, we must check the following assumptions:
+1) Linearity
+2) Independence
+3) Homoscedasticity
+4) Normality of residuals
 
 ### Test of hypothesis
+Our linear model is as follows
+$$ BMI=\beta_0+\beta_1Age+e $$
+```{r}
+# Fit linear model
+BMIonFAF <- lm(BMI ~ FAF, data=obesityData)
+
+# Get the summary of the model
+BMIonFAF_summary <- summary(BMIonFAF)
+
+# Format the coefficients and p-values
+formatted_coefficients <- matrix(as.character(signif(
+  BMIonFAF_summary$coefficients, 4)), ncol = 4)
+
+colnames(formatted_coefficients) <- c("Estimate", "Std. Error",
+                                      "t value", "p-value")
+rownames(formatted_coefficients) <- c('Intercept',
+                                      'Frequency of\nphysical activity')
+
+
+kable(formatted_coefficients,
+      caption = 'Fig. X: Simple Linear Regression of BMI on Fequency of Physical Activity')
+```
+The results of the simple linear model can be shown above in Figure X. At $\alpha=0.05$, we observe that our p-value, the probability that we observe a sample as or more extreme than our observed values given there is no relationship between BMI and frequency of physical activity is ____, or essentially 0. Thus, we reject our null hypothesis given we have statistically significant evidence that frequency of exercise impacts BMI. The slope coefficient $\hat{\beta_1}=-1.672$ states that for every one day per week increase in frequency of physical activity, our model predicts that BMI will decrease by 1.672 kilograms per meter.
+
+We can also compute the confidence interval for $\hat{\beta_1}$ to further explore this relationship. The formula for the confidence interval is as follows
+$$
+\begin{aligned}
+\hat{\beta_1}&\pm t_{\alpha/2}SE(\hat{\beta_1})\\
+-1.672&\pm 1.96*0.2018\\
+-1.672&\pm0.3955\\
+\end{aligned}
+$$
+Thus, our confidence interval is [-2.0675, -1.2765].
+```{r}
+# Check calculation using R function
+kable(confint(BMIonFAF),
+      caption = 'Confidence Interval Calculation by R')
+```
 
 ### Goodness-of-fit
+Next, we can assess the goodness of fit of our model where $R^2=$ `r round(summary(BMIonFAF)$r.squared, 4)`. Thus, our model of BMI on frequency of physical activity accounts for 3.15% of total variability in BMI. As this value is rather low, we can examine why our model may not be a good fit using residual plots.
+```{r}
+# Generate residual plot
+# Create residuals and fitted values
+residuals <- resid(BMIonFAF)
+fitted_values <- fitted(BMIonFAF)
+
+data.frame(fitted_values, residuals) %>% 
+  ggplot(aes(x = fitted_values,
+             y = residuals)) +
+  geom_point() +
+  labs(title = "Fig. Y: Residuals vs Fitted Values",
+       x = "Fitted Values",
+       y = "Residuals") +
+  theme_minimal()
+```
+Figure Y shows the spread of residuals. We should notice that there are four densely populated regions of residuals that may be due to rounding of answers. Also, notice how fitted values below 28 do not have residuals larger than 10 as opposed to other fitted values. As we are able to draw on some patterns in our residual plot, it may be beneficial to use a different model or fit our model to jittered values to eliminate the rounding effect in the future.
 
 ### Conclusion
