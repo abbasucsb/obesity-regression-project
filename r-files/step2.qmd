@@ -40,7 +40,7 @@ bfcolor <- function(x, color) {
 </div>
 - Tasha Lee    (tashalee)
 - Abbas Maheryar    (amaheryar)
-- STUDENT 3    (NetID 3)
+- Maya    (NetID 3)
 - STUDENT 4    (NetID 4)
 - STUDENT 5    (NetID 5)
 :::
