@@ -39,7 +39,7 @@ bfcolor <- function(x, color) {
 <span style="color: blue;"> **STUDENT NAME **</span> 
 </div>
 - Tasha Lee    (tashalee)
-- STUDENT 2    (NetID 2)
+- Abbas Maheryar    (amaheryar)
 - STUDENT 3    (NetID 3)
 - STUDENT 4    (NetID 4)
 - STUDENT 5    (NetID 5)
@@ -84,19 +84,19 @@ obesityData <- read.csv("../data/BMI_data.csv")
 
 ### Hypothesis 1
 $$
-\begin{align}
+\begin{aligned}
 H_0&: \text{Family history does not affect BMI} \\
 H_A&: \text{There is a significant relationship between family history and BMI}
-\end{align}
+\end{aligned}
 $$
 
 
 **Hypothesis 2**
 $$
-\begin{align}
+\begin{aligned}
 H_0&: \text{No particular eating habit has any effect on BMI} \\
 H_A&: \text{At least 1 eating habit has a significant effect on BMI}
-\end{align}
+\end{aligned}
 $$
 
 
@@ -125,6 +125,7 @@ H_0&: \beta_1=0\\
 H_A&: \beta_1\neq0 \text{ ; where }\beta_1\text{ is the slope coefficient}
 \end{aligned}
 $$
+
 Thus, the null hypothesis states that there is no linear relationship between BMI and frequency of physical activity and the alternative hypothesis is that there exists a linear relationship between BMI and frequency of physical activity.
 
 ### Assumptions of Linearity
