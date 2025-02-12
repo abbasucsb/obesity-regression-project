@@ -62,7 +62,7 @@ Please carefully review any comments or feedback on Step 1. If you have any ques
 
 ## `r bfcolor("Research Questions", "red")` \ 
 
-```{r}
+```{r echo=FALSE}
 # Load packages
 library(knitr)
 library(ggplot2)
@@ -91,7 +91,7 @@ H_A&: \text{There is a significant relationship between family history and BMI}
 $$
 
 
-**Hypothesis 2**
+### Hypothesis 2
 $$
 \begin{aligned}
 H_0&: \text{No particular eating habit has any effect on BMI} \\
