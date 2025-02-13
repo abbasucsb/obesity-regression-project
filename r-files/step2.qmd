@@ -24,6 +24,7 @@ format:
 knitr::opts_chunk$set(message =  FALSE)
 knitr::opts_chunk$set(warning =  FALSE)
 knitr::opts_chunk$set(error =  FALSE)
+knitr::opts_chunk$set(echo = FALSE)
 bfcolor <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
@@ -31,7 +32,6 @@ bfcolor <- function(x, color) {
     sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
   } else x
 }
-echo=FALSE
 ```
 
 
@@ -110,6 +110,7 @@ $$
 For our dataset, we did not have any missing or null values. The only form of processing we did was to create a new column called `BMI` for the continuous variable of body-mass index.
 
 
+
 ### Descriptive Statistics
 
 Qualitative variable descriptive statistics:
@@ -183,7 +184,7 @@ ggplot(obesityData, aes(x=MTRANS, y=BMI,
   ggtitle("Distributions of BMI based on family history of obesity") +
   labs(fill = "Fam Hist.")
 ```
-```{r,fig.show="hold",echo=FALSE}
+```{r,fig.show="hold", fig.width=10,echo=FALSE}
 library(patchwork)
 theme_update(text = element_text(size=10))
 a<-ggplot(obesityData, aes(x=factor(MTRANS))) +
@@ -205,6 +206,14 @@ ggplot(obesityData, aes(x=BMI)) +
   ggtitle("Histogram of BMI data with normal curve")
 
 ```
+```{r}
+continous <- obesityData[, c("Age", "NCP", "CH2O", 
+                             "FAF", "TUE", "BMI")]
+library(corrplot)
+cor_mat <- cor(continous)
+corrplot(cor_mat, method="number", "upper")
+```
+
 
 
 
