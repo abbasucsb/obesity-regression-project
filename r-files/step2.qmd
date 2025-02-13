@@ -40,7 +40,7 @@ bfcolor <- function(x, color) {
 </div>
 - Tasha Lee    (tashalee)
 - Abbas Maheryar    (amaheryar)
-- Maya    (NetID 3)
+- Maya Hoffstadt   (mayahoffstadt)
 - STUDENT 4    (NetID 4)
 - STUDENT 5    (NetID 5)
 :::
@@ -110,6 +110,67 @@ For our dataset, we did not have any missing or null values. The only form of pr
 
 
 ### Descriptive Statistics
+
+Qualitative variable descriptive statistics:
+(BMI, age, height, weight, FCVC, NCP, CH2O, FAF, TUE)
+```{r echo=FALSE}
+quant_vars <- obesityData %>%
+  select(where(is.numeric))
+summary_stats <-summary(quant_vars)
+
+kable(summary_stats, col.names = colnames(quant_vars), 
+      caption = "Summary Statistics for Quantitative Variables")
+```
+
+
+Quanitative variable descriptive statistics:
+(Gender, family history, FAVC, CAEC, Smoke, SCC, CALC, MTRANS)
+
+
+
+```{r echo=FALSE}
+
+# Ensure that categorical variables are selected correctly and convert character to factors if needed
+categorical_vars <- obesityData %>%
+  mutate(across(where(is.character), as.factor)) %>%
+  select(where(is.factor))
+
+
+# Create an empty list to store summary tables for each variable
+summary_list <- list()
+
+# Loop through each categorical variable and calculate summary statistics
+for (var in colnames(categorical_vars)) {
+  
+  # Create a frequency table for each variable
+  freq_table <- table(categorical_vars[[var]])
+  
+  # Calculate the proportions (frequency)
+  prop_table <- prop.table(freq_table)
+  
+  # Create a data frame to store counts and proportions
+  summary_df <- data.frame(
+    Category = names(freq_table),
+    Count = as.integer(freq_table),
+    Proportion = round(prop_table, 3)
+  )
+  
+  # Add the summary table to the list
+  summary_list[[var]] <- summary_df
+}
+
+
+# Loop through all categorical variables and print their summaries
+for (var in colnames(categorical_vars)) {
+  if (!is.null(summary_list[[var]]) && is.data.frame(summary_list[[var]])) {
+    # Print the table for the variable using kable
+    print(kable(summary_list[[var]][,c("Category", "Count", "Proportion.Freq")],
+                caption = paste("Summary for", var)))
+  } 
+  }
+
+
+```
 
 
 ### Data Visualization
