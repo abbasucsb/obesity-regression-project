@@ -31,6 +31,7 @@ bfcolor <- function(x, color) {
     sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
   } else x
 }
+echo=FALSE
 ```
 
 
