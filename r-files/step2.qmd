@@ -345,4 +345,4 @@ write.csv(obesityData, "../data/data-cleaned.csv", row.names = FALSE)
 
 ### Conclusion
 
-In conclusion, the simple linear regression between BMI and frequency of physical exercise has significance at level p < 0.05, thus reject null hypothesis 1. 
+We conclude at the significance level $\alpha < 0.05$ that there is a significant relationship between BMI and frequency of physical exercise, which is modeled by a nonzero coefficient in the linear model. So, we reject the null hypothesis. Moreover, while this model is saying that there is a significant relationship between these two variables that we cannot neglect, the simple linear regression model still leaves a lot of variance in the data unexplained, making us unable to accurately predict BMI with only the knowledge of one's physical activity habits.
