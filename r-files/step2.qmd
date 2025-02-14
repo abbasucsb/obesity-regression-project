@@ -42,8 +42,8 @@ bfcolor <- function(x, color) {
 - Tasha Lee    (tashalee)
 - Abbas Maheryar    (amaheryar)
 - Maya Hoffstadt   (mayahoffstadt)
-- STUDENT 4    (NetID 4)
-- STUDENT 5    (NetID 5)
+- Angelina Song    (angelinasong)
+- Cyrus Mohammadian    (cmohammadian)
 :::
 
 
@@ -208,7 +208,8 @@ ggplot(obesityData, aes(x=MTRANS, y=BMI,
                         fill = family_history_with_overweight)) +
   geom_boxplot() +
   ggtitle("Distributions of BMI based on family history of obesity") +
-  labs(fill = "Fam Hist.")
+  
+  labs(x = "Method of Transportation (MTRANS)", fill = "Fam Hist.", caption = "This box plot indicates those who have family history of obesity are more likely to have a higher BMI regardless of their method of transportation.")
 ```
 ```{r,fig.show="hold", fig.width=10,echo=FALSE}
 library(patchwork)
@@ -216,12 +217,16 @@ theme_update(text = element_text(size=10))
 a<-ggplot(obesityData, aes(x=factor(MTRANS))) +
   geom_bar() +
   xlab("Method of Transp.") +
-  ggtitle("Method of Trans. Count Plot")
+  ggtitle("Method of Trans. Count Plot") + 
+  labs(caption = "Survey responses on the method of transportation used by participants in the study (Hypothesis 1)")
 b<-ggplot(obesityData, aes(x=factor(family_history_with_overweight))) +
   geom_bar() +
   xlab("Family hist.") +
-  ggtitle("Family Hist. of Obesity Count Plot")
-a+b + plot_layout(ncol = 2) 
+  ggtitle("Family Hist. of Obesity Count Plot") + 
+  labs(caption = "Survey responses on family history of obesity regarding participants in the study (Hypothesis 2)")
+a+b + plot_layout(ncol = 2)
+
+
 ```
 ```{r, fig.width=10, fig.height=5, echo=FALSE}
 ggplot(obesityData, aes(x=BMI)) +
@@ -229,7 +234,7 @@ ggplot(obesityData, aes(x=BMI)) +
   stat_function(fun=dnorm, args=list(mean=mean(obesityData$BMI),
                                      sd=sd(obesityData$BMI)),
                 color="red", linewidth=1) +
-  ggtitle("Histogram of BMI data with normal curve")
+  ggtitle("Histogram of BMI data with normal curve") 
 
 ```
 ```{r}
@@ -237,9 +242,9 @@ continous <- obesityData[, c("Age", "NCP", "CH2O",
                              "FAF", "TUE", "BMI")]
 library(corrplot)
 cor_mat <- cor(continous)
-corrplot(cor_mat, method="number", "upper")
+corrplot(cor_mat, method="number", "upper") 
 ```
-
+This correlation plot displays the relationship between the numerous factors. There seems to be a significant positive correlation between CH2O (amount of water drank) and TUE (time on technology). There is also mild negative correlations between FAF (physical activity), TUE, CH2O and BMI,
 
 
 
@@ -296,19 +301,19 @@ rownames(formatted_coefficients) <- c('Intercept',
 
 
 kable(formatted_coefficients,
-      caption = 'Fig. X: Simple Linear Regression of BMI on Fequency of Physical Activity')
+      caption = 'Fig. X: Simple Linear Regression of BMI on Frequency of Physical Activity')
 ```
-The results of the simple linear model can be shown above in Figure X. At $\alpha=0.05$, we observe that our p-value, the probability that we observe a sample as or more extreme than our observed values given there is no relationship between BMI and frequency of physical activity is ____, or essentially 0. Thus, we reject our null hypothesis given we have statistically significant evidence that frequency of exercise impacts BMI. The slope coefficient $\hat{\beta_1}=-1.672$ states that for every one day per week increase in frequency of physical activity, our model predicts that BMI will decrease by 1.672 kilograms per meter.
+The results of the simple linear model can be shown above in Figure X. At $\alpha=0.05$, we observe that our p-value, the probability that we observe a sample as or more extreme than our observed values given there is no relationship between BMI and frequency of physical activity is $p < 6.159e^{-36}$, or essentially 0. Thus, we reject our null hypothesis given we have statistically significant evidence that frequency of exercise impacts BMI. The slope coefficient $\hat{\beta_1}=-1.689$ states that for every one day per week increase in frequency of physical activity, our model predicts that BMI will decrease by 1.689 kilograms per meter.
 
 We can also compute the confidence interval for $\hat{\beta_1}$ to further explore this relationship. The formula for the confidence interval is as follows
 $$
 \begin{aligned}
 \hat{\beta_1}&\pm t_{\alpha/2}SE(\hat{\beta_1})\\
--1.672&\pm 1.96*0.2018\\
--1.672&\pm0.3955\\
+-1.689&\pm 1.96*0.1324\\
+-1.689&\pm0.259504\\
 \end{aligned}
 $$
-Thus, our confidence interval is [-2.0675, -1.2765].
+Thus, our confidence interval is [-1.9485, -1.4295]. 
 ```{r}
 # Check calculation using R function
 kable(confint(BMIonFAF),
@@ -339,3 +344,5 @@ write.csv(obesityData, "../data/data-cleaned.csv", row.names = FALSE)
 ```
 
 ### Conclusion
+
+In conclusion, the simple linear regression between BMI and frequency of physical exercise has significance at level p < 0.05, thus reject null hypothesis 1. 

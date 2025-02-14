@@ -1,5 +1,5 @@
 "Gender","Age","Height","Weight","family_history_with_overweight","FAVC","FCVC","NCP","CAEC","SMOKE","CH2O","SCC","FAF","TUE","CALC","MTRANS","NObeyesdad","BMI"
-"Female",21,1.62,64,"yes","no",2,3,"Sometimes","no",2.15492245368659,"no",0,4.76148566557094,"no","Public_Transportation","Normal_Weight",24.38652644
+"Female",21,1.62,64,"yes","no",2,3,"Sometimes","no",2.1549224536866,"no",0,4.76148566557094,"no","Public_Transportation","Normal_Weight",24.38652644
 "Female",21,1.52,56,"yes","no",3,3,"Sometimes","yes",1.08642761828378,"yes",4.54270311471583,1.53772897832096,"Sometimes","Public_Transportation","Normal_Weight",24.23822715
 "Male",23,1.8,77,"yes","no",2,3,"Sometimes","no",2.96303459625216,"no",3.09948373522853,4.05498502170667,"Frequently","Public_Transportation","Normal_Weight",23.7654321
 "Male",27,1.8,87,"no","no",3,3,"Sometimes","no",0.197274899343029,"no",3.63263750435948,0.417104562744498,"Frequently","Active_Transportation","Overweight_Level_I",26.85185185
@@ -25,7 +25,7 @@
 "Female",22,1.6,82,"yes","yes",1,1,"Sometimes","no",2.08388723758981,"no",0,9.14873740614808,"Sometimes","Public_Transportation","Obesity_Type_I",32.03125
 "Male",21,1.85,68,"yes","yes",2,3,"Sometimes","no",2.11087395204231,"no",0,4.85658138524741,"Sometimes","Public_Transportation","Normal_Weight",19.86851717
 "Male",20,1.6,50,"yes","no",2,4,"Frequently","yes",3.92963943435791,"no",4.19909501575195,5.00480556022376,"no","Public_Transportation","Normal_Weight",19.53125
-"Male",21,1.7,65,"yes","yes",2,1,"Frequently","no",3.47605100824478,"no",1.03010107255039,8.63868865908539,"Frequently","Active_Transportation","Normal_Weight",22.49134948
+"Male",21,1.7,65,"yes","yes",2,1,"Frequently","no",3.47605100824478,"no",1.03010107255039,8.6386886590854,"Frequently","Active_Transportation","Normal_Weight",22.49134948
 "Female",23,1.6,52,"no","yes",2,4,"Frequently","no",2.65083686262369,"no",3.17872809941639,4.80046484339982,"Sometimes","Personal_Vehicle","Normal_Weight",20.3125
 "Male",19,1.75,76,"yes","yes",3,3,"Sometimes","no",2.41866608802229,"yes",4.31533126112169,4.37396219372749,"Sometimes","Public_Transportation","Normal_Weight",24.81632653
 "Male",23,1.68,70,"no","yes",2,3,"Sometimes","no",2.07911817356944,"no",3.46891523108069,8.95256510914719,"Frequently","Active_Transportation","Normal_Weight",24.8015873
@@ -34,7 +34,7 @@
 "Female",24,1.77,76,"no","no",2,3,"Sometimes","no",3.19534807554902,"no",1.6870568215626,4.8128438135609,"Sometimes","Active_Transportation","Normal_Weight",24.25867407
 "Male",39,1.79,90,"no","no",2,1,"Sometimes","no",1.20290582650341,"no",0,1.23093715403229,"Sometimes","Public_Transportation","Overweight_Level_II",28.08901095
 "Male",22,1.65,62,"no","yes",2,4,"Frequently","no",0.697558963904157,"no",3.68324797822148,0.290026664733887,"Sometimes","Public_Transportation","Normal_Weight",22.77318641
-"Female",21,1.5,65,"yes","no",2,3,"Sometimes","no",3.49086073414639,"no",3.08347741899909,5.02101357327774,"Sometimes","Public_Transportation","Overweight_Level_II",28.88888889
+"Female",21,1.5,65,"yes","no",2,3,"Sometimes","no",3.4908607341464,"no",3.08347741899909,5.02101357327774,"Sometimes","Public_Transportation","Overweight_Level_II",28.88888889
 "Female",22,1.56,49,"no","yes",2,3,"Sometimes","no",0.0687013890128583,"yes",2.97927309511215,0.404240744188428,"no","Active_Transportation","Normal_Weight",20.13477975
 "Female",21,1.6,48,"no","yes",2,3,"Sometimes","no",1.50791848427616,"no",1.53710865646617,1.8079512626864,"Sometimes","Public_Transportation","Normal_Weight",18.75
 "Male",23,1.65,67,"yes","yes",2,3,"Sometimes","no",2.24550848314539,"no",1.65636043311875,3.8835149849765,"Sometimes","Public_Transportation","Normal_Weight",24.6097337
@@ -61,7 +61,7 @@
 "Male",20,1.76,55,"yes","yes",2,4,"Sometimes","no",2.93267602096767,"no",3.69195442395074,5.49593110429123,"no","Public_Transportation","Insufficient_Weight",17.75568182
 "Female",21,1.55,49,"yes","yes",2,3,"Sometimes","no",2.18929907726124,"no",4.62461614661377,3.27411903068423,"Sometimes","Public_Transportation","Normal_Weight",20.39542144
 "Male",20,1.65,58,"no","yes",2,3,"Sometimes","no",3.14267841536076,"no",4.51006892121226,3.27261333726346,"Sometimes","Public_Transportation","Normal_Weight",21.30394858
-"Male",22,1.67,62,"no","yes",2,1,"no","no",0.449063118314371,"no",0,0.070236355997622,"Sometimes","Public_Transportation","Normal_Weight",22.23098713
+"Male",22,1.67,62,"no","yes",2,1,"no","no",0.44906311831437,"no",0,0.070236355997622,"Sometimes","Public_Transportation","Normal_Weight",22.23098713
 "Male",22,1.68,55,"yes","yes",2,3,"Sometimes","no",2.57436979422346,"no",0,6.35980313173951,"Sometimes","Personal_Vehicle","Normal_Weight",19.48696145
 "Female",21,1.66,57,"yes","yes",2,3,"Frequently","no",2.20225162793415,"no",1.56615660821908,4.57292615296319,"no","Public_Transportation","Normal_Weight",20.68515024
 "Female",21,1.62,69,"yes","yes",1,3,"Frequently","no",2.1403027976204,"no",0,4.06473118020222,"no","Public_Transportation","Overweight_Level_I",26.29172382
@@ -238,7 +238,7 @@
 "Female",21,1.66,59,"no","yes",1,3,"Always","no",0.0143133979290724,"yes",4.81590090861307,0.14013411803171,"no","Personal_Vehicle","Normal_Weight",21.41094498
 "Female",19,1.64,53,"yes","yes",3,3,"Sometimes","no",2.06534727354277,"no",1.28626629180937,3.27841551369056,"no","Public_Transportation","Normal_Weight",19.70553242
 "Female",20,1.62,53,"no","yes",3,1,"Sometimes","no",2.87606314475292,"no",1.43630735116598,3.98748268187046,"no","Public_Transportation","Normal_Weight",20.19509221
-"Female",19,1.7,64,"yes","yes",3,3,"no","no",2.92392368889869,"yes",4.44590057277028,3.63731603091583,"no","Public_Transportation","Normal_Weight",22.14532872
+"Female",19,1.7,64,"yes","yes",3,3,"no","no",2.9239236888987,"yes",4.44590057277028,3.63731603091583,"no","Public_Transportation","Normal_Weight",22.14532872
 "Female",17,1.63,65,"no","yes",2,1,"Sometimes","no",2.15632623403307,"no",1.65459831434995,4.49415657715872,"no","Public_Transportation","Normal_Weight",24.4646016
 "Male",22,1.6,66,"no","yes",3,3,"Sometimes","no",0.471023130463436,"no",4.86107313125802,0.520751809235662,"no","Active_Transportation","Overweight_Level_I",25.78125
 "Female",20,1.63,64,"yes","yes",1,3,"Always","no",3.19249552018465,"no",0,6.32065067063541,"no","Personal_Vehicle","Normal_Weight",24.08822312
@@ -270,7 +270,7 @@
 "Male",17,1.67,60,"no","no",2,4,"Always","no",2.27303398540244,"no",0,5.48930442053825,"no","Public_Transportation","Normal_Weight",21.51385851
 "Male",23,1.72,66,"yes","yes",2,3,"Sometimes","no",3.55682205772939,"no",0,4.07660270482302,"Sometimes","Active_Transportation","Normal_Weight",22.30935641
 "Male",23,1.82,107,"no","yes",2,3,"Sometimes","no",3.10507947854222,"no",0,4.57695208350196,"Sometimes","Public_Transportation","Obesity_Type_I",32.30286197
-"Female",19,1.5,50,"no","yes",2,3,"Frequently","no",2.0281938589178,"no",0,5.79318344681979,"Sometimes","Public_Transportation","Normal_Weight",22.22222222
+"Female",19,1.5,50,"no","yes",2,3,"Frequently","no",2.0281938589178,"no",0,5.7931834468198,"Sometimes","Public_Transportation","Normal_Weight",22.22222222
 "Male",18,1.7,60,"no","yes",2,3,"Sometimes","no",2.58570243185386,"no",3.17393058615534,4.35744208144024,"no","Public_Transportation","Normal_Weight",20.76124567
 "Male",25,1.71,71,"yes","yes",2,3,"Frequently","no",0.421238828217611,"no",0,0.306095810141414,"Sometimes","Personal_Vehicle","Normal_Weight",24.28097534
 "Female",25,1.61,61,"no","no",2,3,"Sometimes","no",2.47195308888331,"no",2.85789162959228,3.30302441772074,"Sometimes","Public_Transportation","Normal_Weight",23.53304271
@@ -347,7 +347,7 @@
 "Male",17,1.7,55,"no","yes",3,3,"Always","no",3.62287749900463,"no",4.55800135897388,4.2134364512749,"Sometimes","Public_Transportation","Normal_Weight",19.03114187
 "Female",21,1.54,47,"yes","no",3,3,"Always","no",1.11783403810114,"no",2.18376542962571,1.16934951161966,"no","Public_Transportation","Normal_Weight",19.81784449
 "Male",17,1.8,97,"yes","yes",2,3,"Sometimes","no",2.73586471002073,"no",1.42985678376148,4.86056337365881,"Sometimes","Active_Transportation","Overweight_Level_II",29.9382716
-"Male",18,1.82,80,"yes","yes",2,3,"Sometimes","no",2.96287490042094,"no",4.85156733143639,5.46690140729475,"no","Active_Transportation","Normal_Weight",24.1516725
+"Male",18,1.82,80,"yes","yes",2,3,"Sometimes","no",2.96287490042094,"no",4.8515673314364,5.46690140729475,"no","Active_Transportation","Normal_Weight",24.1516725
 "Male",20,1.98,125,"yes","yes",2,3,"Always","no",7.1036899238487,"no",1.29778045856899,4.1013344344683,"Sometimes","Public_Transportation","Obesity_Type_I",31.88450158
 "Male",17,1.75,70,"yes","no",2,3,"Sometimes","no",2.76417111048594,"no",4.511357632569,5.12226038739578,"Sometimes","Active_Transportation","Normal_Weight",22.85714286
 "Female",26,1.65,60,"no","no",3,4,"Always","no",1.15036839968525,"no",3.75710715274652,1.92953980946913,"no","Active_Transportation","Normal_Weight",22.03856749
@@ -391,7 +391,7 @@
 "Female",16,1.61,65,"yes","yes",1,1,"Sometimes","no",1.29864398669451,"no",0,1.25670117139816,"no","Public_Transportation","Overweight_Level_I",25.07619305
 "Male",23,1.71,50,"yes","yes",2,3,"Always","no",3.57404148804498,"no",0,5.45120943896472,"no","Public_Transportation","Insufficient_Weight",17.09927841
 "Female",18,1.7,50,"no","no",2,3,"Sometimes","no",3.07742472361298,"no",0,3.11406062403694,"Sometimes","Active_Transportation","Insufficient_Weight",17.30103806
-"Male",18,1.76,69.5,"no","no",3,3,"Frequently","no",3.76043800256195,"no",2.77665876870111,5.27014148652929,"no","Public_Transportation","Normal_Weight",22.43672521
+"Male",18,1.76,69.5,"no","no",3,3,"Frequently","no",3.76043800256195,"no",2.77665876870111,5.2701414865293,"no","Public_Transportation","Normal_Weight",22.43672521
 "Male",18,1.7,78,"no","yes",1,3,"Sometimes","no",2.83092911630393,"no",0,4.78566564433277,"Sometimes","Public_Transportation","Overweight_Level_II",26.98961938
 "Female",17,1.53,55,"yes","yes",2,3,"Sometimes","no",2.19986843454035,"no",0,4.88403788628057,"no","Public_Transportation","Normal_Weight",23.49523687
 "Female",20,1.54,39,"yes","yes",1,3,"Sometimes","no",2.05017227493227,"no",4.49963560082299,5.31122938136489,"Sometimes","Public_Transportation","Insufficient_Weight",16.44459437
@@ -610,7 +610,7 @@
 "Male",18,1.70165,50.157707,"yes","yes",1.757466,3,"Sometimes","no",3.60092288619819,"no",0,4.52590977260843,"Sometimes","Public_Transportation","Insufficient_Weight",17.32196665
 "Male",19.97981,1.75336,54.997374,"yes","yes",2,3.494849,"Sometimes","no",2.27525138256842,"no",1.34888066335892,5.05700701139979,"no","Public_Transportation","Insufficient_Weight",17.88956433
 "Female",21.798856,1.672007,49.980968,"yes","yes",2.979383,3,"Frequently","no",2.43243721425092,"no",0,4.03171384707093,"no","Public_Transportation","Insufficient_Weight",17.87839303
-"Female",22.209706,1.593847,44.050251,"no","no",3,2.99321,"Frequently","no",0.452560805715621,"no",1.15014163999671,0.0915139052085578,"no","Public_Transportation","Insufficient_Weight",17.34024098
+"Female",22.209706,1.593847,44.050251,"no","no",3,2.99321,"Frequently","no",0.45256080571562,"no",1.15014163999671,0.0915139052085578,"no","Public_Transportation","Insufficient_Weight",17.34024098
 "Female",23.018443,1.584785,44.376637,"no","no",2.204914,2.127797,"Frequently","no",1.3263519979082,"no",0,1.19633782096207,"no","Public_Transportation","Insufficient_Weight",17.66906966
 "Female",19.376997,1.600264,45,"no","no",3,3,"Frequently","no",0.33776278141886,"yes",1.13448346253752,0.60237937187776,"Sometimes","Public_Transportation","Insufficient_Weight",17.57232565
 "Female",20.971429,1.549311,41.557468,"no","yes",2.927218,1,"Frequently","no",0.356803072383627,"no",0,0.839839290827513,"Sometimes","Public_Transportation","Insufficient_Weight",17.31298172
@@ -642,7 +642,7 @@
 "Female",20.172661,1.605521,44.661461,"no","no",3,2.893778,"Frequently","no",1.4257571187336,"yes",0,1.81994133070111,"Sometimes","Public_Transportation","Insufficient_Weight",17.32610512
 "Female",19.220108,1.530266,42,"no","yes",3,1,"Frequently","no",0.224087596172467,"no",0,0.109641768038273,"Sometimes","Public_Transportation","Insufficient_Weight",17.93558028
 "Male",18,1.71889,52.058335,"yes","yes",1.950742,3,"Sometimes","no",5.03165366717982,"no",0,3.77028114721179,"Sometimes","Public_Transportation","Insufficient_Weight",17.61952125
-"Male",19.96247,1.756338,54.98234,"yes","yes",2.277436,3.502604,"Sometimes","no",3.60892386912348,"no",1.26848198979455,4.17279358208179,"no","Public_Transportation","Insufficient_Weight",17.82407593
+"Male",19.96247,1.756338,54.98234,"yes","yes",2.277436,3.502604,"Sometimes","no",3.60892386912348,"no",1.26848198979455,4.1727935820818,"no","Public_Transportation","Insufficient_Weight",17.82407593
 "Male",17.580627,1.770324,55.695253,"yes","yes",2,4,"Sometimes","no",2.06840300001204,"no",2.83767809090638,3.75170739088207,"no","Personal_Vehicle","Insufficient_Weight",17.77103274
 "Female",21.125098,1.767479,56.265959,"yes","yes",2.371338,3.998766,"Frequently","no",1.65678719291463,"no",3.02383234208403,1.88303326908499,"no","Public_Transportation","Insufficient_Weight",18.01097405
 "Female",22.033129,1.704223,51.437985,"yes","yes",2.984425,3,"Frequently","no",2.24653644116079,"no",2.96412695929749,4.13575734850019,"no","Public_Transportation","Insufficient_Weight",17.71051145
@@ -821,7 +821,7 @@
 "Male",23.170309,1.707557,75.306702,"yes","yes",2.303367,3.042774,"Sometimes","no",1.71282198559493,"no",0,1.64704293012619,"Sometimes","Public_Transportation","Overweight_Level_I",25.82754987
 "Female",32.997118,1.672446,74.812707,"yes","yes",2.948425,1.198643,"Sometimes","no",1.39383674459532,"no",0,1.02684527309611,"Sometimes","Personal_Vehicle","Overweight_Level_I",26.74675879
 "Female",32.501143,1.675979,74.959747,"yes","yes",2.291846,1.555557,"Sometimes","no",0.75324196391739,"no",0,0.719887919258326,"Sometimes","Personal_Vehicle","Overweight_Level_I",26.68645994
-"Female",21.938831,1.611239,67.939653,"yes","yes",1.906194,3.987707,"Sometimes","no",2.46153893088922,"no",1.55824224249401,3.21431524911895,"Sometimes","Public_Transportation","Overweight_Level_I",26.16998017
+"Female",21.938831,1.611239,67.939653,"yes","yes",1.906194,3.987707,"Sometimes","no",2.46153893088922,"no",1.558242242494,3.21431524911895,"Sometimes","Public_Transportation","Overweight_Level_I",26.16998017
 "Female",21.909534,1.611356,68.06609,"yes","yes",1.834155,3.995957,"Sometimes","no",2.07106036376218,"no",1.13782382382873,4.20815351977944,"Sometimes","Public_Transportation","Overweight_Level_I",26.21487568
 "Male",21,1.62,70,"no","yes",2,1,"no","no",1.39278427464887,"no",1.41569705729818,1.08076254278421,"Sometimes","Public_Transportation","Overweight_Level_I",26.6727633
 "Female",37.455752,1.508908,63.183846,"yes","yes",2.048582,1.047197,"Sometimes","no",1.97402932844125,"no",0,1.32058835355565,"Sometimes","Personal_Vehicle","Overweight_Level_I",27.7511213
@@ -961,7 +961,7 @@
 "Female",16.370009,1.613921,66.738769,"yes","yes",2.206399,1,"Sometimes","no",3.37765164948524,"yes",0,3.89295547641814,"no","Public_Transportation","Overweight_Level_I",25.62203657
 "Female",17.992717,1.618683,67.193585,"yes","yes",1.952987,1,"Sometimes","no",2.17465032269606,"yes",0,3.63915563793853,"no","Public_Transportation","Overweight_Level_I",25.64508846
 "Male",19.179932,1.637537,70,"yes","yes",2,1.030416,"Sometimes","no",1.01753466785885,"no",0,1.21928724553436,"no","Public_Transportation","Overweight_Level_I",26.1045251
-"Female",19.621545,1.566524,61.616,"no","yes",2.908757,2.696051,"Sometimes","no",0.0426341150887311,"yes",0,0.776620784774423,"Sometimes","Public_Transportation","Overweight_Level_I",25.10842062
+"Female",19.621545,1.566524,61.616,"no","yes",2.908757,2.696051,"Sometimes","no",0.042634115088731,"yes",0,0.776620784774423,"Sometimes","Public_Transportation","Overweight_Level_I",25.10842062
 "Female",19.755797,1.542328,63.856193,"no","yes",2.628791,2.762883,"Sometimes","no",0.212085172068328,"yes",0,0.0162378516979516,"Sometimes","Public_Transportation","Overweight_Level_I",26.84414259
 "Female",17.099015,1.6,65,"yes","yes",3,2.401341,"Sometimes","no",2.43125198455527,"yes",0,3.97959034657106,"Sometimes","Public_Transportation","Overweight_Level_I",25.390625
 "Female",17.25813,1.600184,65,"yes","yes",2.749629,2.298612,"Sometimes","no",2.26774978890528,"yes",0,4.57921530213207,"Sometimes","Public_Transportation","Overweight_Level_I",25.38478616
@@ -1010,7 +1010,7 @@
 "Male",23.285553,1.717775,85.312639,"yes","yes",2.951591,3,"Sometimes","no",1.62301481864415,"no",0,1.39491370413452,"Sometimes","Public_Transportation","Overweight_Level_II",28.91217877
 "Male",23,1.791867,90,"yes","yes",2.067817,3,"Sometimes","no",3.06904658839687,"no",0,3.12872102111578,"Sometimes","Public_Transportation","Overweight_Level_II",28.03050788
 "Female",25.19291,1.7,80.749657,"yes","yes",2.54527,3,"Sometimes","no",4.65476618880842,"no",0,4.85374799510464,"Frequently","Public_Transportation","Overweight_Level_II",27.94105779
-"Male",34.389906,1.68108,83.568035,"yes","yes",2,1.660768,"Sometimes","no",0.438035167986527,"no",0,0.372664649970829,"no","Personal_Vehicle","Overweight_Level_II",29.57082409
+"Male",34.389906,1.68108,83.568035,"yes","yes",2,1.660768,"Sometimes","no",0.438035167986527,"no",0,0.37266464997083,"no","Personal_Vehicle","Overweight_Level_II",29.57082409
 "Female",26.595893,1.660756,78.574786,"yes","yes",2,2.597608,"Sometimes","no",1.10063805570826,"no",0,1.94533532625064,"Frequently","Public_Transportation","Overweight_Level_II",28.48862881
 "Male",55.24625,1.769269,80.491339,"no","yes",2,3,"Sometimes","no",0.685643627075478,"no",1.61960298166921,0.231343518942595,"no","Personal_Vehicle","Overweight_Level_II",25.71351309
 "Male",34.543563,1.765188,85,"yes","yes",2.694281,3,"Sometimes","no",0.622160463826731,"no",1.15964331657716,0.0114869442768395,"no","Personal_Vehicle","Overweight_Level_II",27.27953687
@@ -1068,7 +1068,7 @@
 "Male",31.398281,1.919543,101.544589,"yes","yes",2,1.005391,"Sometimes","no",0.599890679586679,"no",1.15711549129056,0.660153980366886,"Sometimes","Public_Transportation","Overweight_Level_II",27.55885029
 "Male",31.484494,1.707613,82.586893,"yes","yes",2.795086,3.250467,"Sometimes","no",1.89065943541937,"no",0,1.39869069308043,"no","Personal_Vehicle","Overweight_Level_II",28.32254158
 "Male",21.709159,1.658393,80,"yes","yes",2,3,"Sometimes","no",6.30091287543006,"no",2.24633992380899,4.17127386853099,"no","Public_Transportation","Overweight_Level_II",29.08808128
-"Female",30.711381,1.536819,65.912688,"yes","no",2.030256,2.948721,"Sometimes","no",0.767839093226939,"no",0,0.110415619332343,"no","Public_Transportation","Overweight_Level_II",27.90767012
+"Female",30.711381,1.536819,65.912688,"yes","no",2.030256,2.948721,"Sometimes","no",0.76783909322694,"no",0,0.110415619332343,"no","Public_Transportation","Overweight_Level_II",27.90767012
 "Male",34.821442,1.805459,90.13868,"yes","yes",2,1.80993,"Sometimes","no",0.389820222742856,"no",0,0.430230405181646,"Sometimes","Personal_Vehicle","Overweight_Level_II",27.65259754
 "Female",20.843363,1.521008,67.083121,"yes","no",2.493448,3,"Sometimes","no",2.0559797603637,"no",0,3.39171981764957,"no","Public_Transportation","Overweight_Level_II",28.99681268
 "Male",19.443639,1.744733,87.27989,"yes","yes",2.442536,3,"Sometimes","no",1.52832560590468,"no",4.20903606233533,1.93032488320023,"Sometimes","Public_Transportation","Overweight_Level_II",28.67188456
@@ -1179,7 +1179,7 @@
 "Female",19.955257,1.5891,72.713611,"yes","no",3,3.856434,"Sometimes","no",3.04121096986802,"no",1.5456670118244,4.68306061858311,"Sometimes","Public_Transportation","Overweight_Level_II",28.79474635
 "Male",19.684891,1.700627,78.048207,"yes","no",1.653081,2.753418,"Sometimes","no",0.329268003348261,"no",1.54592989049934,0.17253040894866,"Sometimes","Public_Transportation","Overweight_Level_II",26.9863899
 "Male",47.7061,1.743935,84.729197,"yes","yes",2.535315,3,"Sometimes","no",0.864430667599663,"no",0,0.320459314156324,"no","Personal_Vehicle","Overweight_Level_II",27.85944772
-"Male",17.997009,1.742654,85,"yes","no",2,3,"Sometimes","no",0.561959498794749,"no",1.19555686949823,0.583123321179301,"Sometimes","Public_Transportation","Overweight_Level_II",27.98959347
+"Male",17.997009,1.742654,85,"yes","no",2,3,"Sometimes","no",0.561959498794749,"no",1.19555686949823,0.5831233211793,"Sometimes","Public_Transportation","Overweight_Level_II",27.98959347
 "Male",17.971786,1.754441,85.002884,"yes","yes",2.765769,3,"Sometimes","no",0.865231432486326,"no",1.51106272476804,0.839595071505755,"Sometimes","Public_Transportation","Overweight_Level_II",27.61570438
 "Male",20.432717,1.719342,80.790813,"yes","yes",2.215464,2.116195,"Sometimes","no",0.401206043781713,"no",1.27061437403771,0.72951418440789,"no","Public_Transportation","Overweight_Level_II",27.3298617
 "Female",33.954433,1.682253,77.431678,"yes","yes",3,2.049908,"Sometimes","no",1.12199617247097,"no",1.72308900653469,1.69444042630494,"no","Personal_Vehicle","Overweight_Level_II",27.36125716
@@ -1328,7 +1328,7 @@
 "Female",40.702771,1.548403,80,"yes","yes",2,3,"Sometimes","no",0.491523978766054,"no",0,0.0292097236961126,"Sometimes","Personal_Vehicle","Obesity_Type_I",33.36737013
 "Male",29.389239,1.681855,90,"yes","yes",2.08841,2.644692,"Sometimes","no",1.58717167936265,"no",1.08600786482915,1.84931764146313,"Sometimes","Personal_Vehicle","Obesity_Type_I",31.81745277
 "Male",30.967417,1.688436,90,"yes","yes",2.180047,2.733077,"Sometimes","no",0.351687293965369,"no",1.47770777317082,0.940078782383353,"Sometimes","Personal_Vehicle","Obesity_Type_I",31.56990701
-"Female",23.474165,1.577115,78,"yes","yes",2,1,"Sometimes","no",1.85730237164535,"no",0,1.17497031949461,"no","Public_Transportation","Obesity_Type_I",31.35940962
+"Female",23.474165,1.577115,78,"yes","yes",2,1,"Sometimes","no",1.85730237164535,"no",0,1.1749703194946,"no","Public_Transportation","Obesity_Type_I",31.35940962
 "Female",24.317607,1.586751,79.109029,"yes","yes",2,1,"Sometimes","no",0.327313690446317,"no",0,0.263563645072281,"no","Public_Transportation","Obesity_Type_I",31.42016726
 "Male",17.052914,1.710616,99.860254,"yes","yes",2,3,"Sometimes","no",1.34480491909198,"no",0,1.51105927769095,"no","Public_Transportation","Obesity_Type_I",34.12617447
 "Male",18.04892,1.721384,99.430612,"yes","yes",2,3,"Sometimes","no",1.10020822146907,"no",1.5339748517754,1.64708187896758,"no","Public_Transportation","Obesity_Type_I",33.55556754
@@ -1446,13 +1446,13 @@
 "Female",23.652435,1.562724,80.535698,"yes","yes",2,1,"Sometimes","no",1.92698716395535,"no",0,1.39117967803031,"no","Public_Transportation","Obesity_Type_I",32.97796578
 "Male",20.677105,1.781251,102.950929,"yes","yes",2,3,"Sometimes","no",0.155050943838432,"no",0,0.782410964835435,"no","Public_Transportation","Obesity_Type_I",32.44740933
 "Male",21.797388,1.775584,103.605896,"yes","yes",2.121909,3,"Sometimes","no",1.35300491913222,"no",1.26414092806769,1.9426808943972,"no","Public_Transportation","Obesity_Type_I",32.86260791
-"Male",22.719385,1.746645,96.875502,"yes","yes",2,3,"Sometimes","no",2.78623128119381,"no",2.44948625025841,4.66645974246785,"no","Public_Transportation","Obesity_Type_I",31.75445592
+"Male",22.719385,1.746645,96.875502,"yes","yes",2,3,"Sometimes","no",2.7862312811938,"no",2.44948625025841,4.66645974246785,"no","Public_Transportation","Obesity_Type_I",31.75445592
 "Male",22.177099,1.741353,96.738014,"yes","yes",2,3,"Sometimes","no",3.01410233125434,"no",3.15114097139012,4.84773628087714,"no","Public_Transportation","Obesity_Type_I",31.9024128
 "Female",23.099906,1.571812,78.997166,"yes","yes",2,1,"Sometimes","no",1.19694679579698,"no",0,1.00801121303812,"no","Public_Transportation","Obesity_Type_I",31.97498219
 "Female",24.17851,1.589027,80.553067,"yes","yes",2,1,"Sometimes","no",0.598418300738558,"no",0,0.70373715646565,"no","Public_Transportation","Obesity_Type_I",31.90211875
 "Male",20.924808,1.803245,105.686091,"yes","yes",2,3,"Sometimes","no",0.0912088619079441,"no",0,0.17440218757838,"Sometimes","Public_Transportation","Obesity_Type_I",32.50187096
 "Male",20.975973,1.792646,105.619143,"yes","yes",2,3,"Sometimes","no",1.254131202586,"no",0,1.98901021387428,"Sometimes","Public_Transportation","Obesity_Type_I",32.86650822
-"Male",21.856301,1.87199,115.627554,"yes","yes",2,2.358455,"Sometimes","no",2.02626532706279,"no",0,4.49279663432389,"Sometimes","Public_Transportation","Obesity_Type_I",32.99546778
+"Male",21.856301,1.87199,115.627554,"yes","yes",2,2.358455,"Sometimes","no",2.02626532706279,"no",0,4.4927966343239,"Sometimes","Public_Transportation","Obesity_Type_I",32.99546778
 "Male",18.140751,1.859056,111.235188,"yes","yes",2,1.706551,"Sometimes","no",4.08376464689942,"no",1.46657882512424,6.22064762372048,"Sometimes","Public_Transportation","Obesity_Type_I",32.18527683
 "Female",18,1.692242,90.019501,"yes","yes",2.642744,3,"Sometimes","no",0.646604707464576,"no",1.27215761958298,0.870612806640565,"Sometimes","Public_Transportation","Obesity_Type_I",31.43486951
 "Female",18,1.683,90.924208,"yes","yes",2.387426,3,"Sometimes","no",1.78317807964049,"no",0,1.27996682329103,"Sometimes","Public_Transportation","Obesity_Type_I",32.10046288
@@ -1499,7 +1499,7 @@
 "Female",18,1.692913,89.93889,"yes","yes",2.818502,3,"Sometimes","no",1.55523773701862,"no",1.28975148589874,1.03846193803474,"no","Public_Transportation","Obesity_Type_I",31.38182841
 "Female",18,1.668555,85.607466,"yes","yes",2.081238,3,"Sometimes","no",1.39477377547882,"no",1.7997656954219,1.95698893815279,"no","Public_Transportation","Obesity_Type_I",30.74897112
 "Male",23.246702,1.652971,93.310284,"yes","yes",1.368978,3,"Sometimes","no",1.38606593152508,"no",0,1.58794997958466,"no","Personal_Vehicle","Obesity_Type_I",34.15065539
-"Male",24.481032,1.661277,90.744965,"yes","yes",1.712848,3,"Sometimes","no",0.266053871950135,"no",0,0.742798328865319,"no","Personal_Vehicle","Obesity_Type_I",32.88050148
+"Male",24.481032,1.661277,90.744965,"yes","yes",1.712848,3,"Sometimes","no",0.266053871950135,"no",0,0.74279832886532,"no","Personal_Vehicle","Obesity_Type_I",32.88050148
 "Male",29,1.641784,89.424947,"yes","yes",1.3307,3,"Sometimes","no",1.67494138958864,"no",0,1.08490657247603,"Sometimes","Personal_Vehicle","Obesity_Type_I",33.176201
 "Male",27.968765,1.673767,89.995034,"yes","yes",1.961069,3,"Sometimes","no",1.22877395083196,"no",0,1.40935150394216,"Sometimes","Personal_Vehicle","Obesity_Type_I",32.12392056
 "Female",18.024744,1.617192,83.121811,"yes","yes",2.976509,3,"Sometimes","no",0.824407244799659,"no",1.67554515024004,0.0785540156066418,"no","Public_Transportation","Obesity_Type_I",31.78277608
@@ -1691,7 +1691,7 @@
 "Male",25.062942,1.828391,120.998266,"yes","yes",3,3,"Sometimes","no",1.35223980247974,"no",1.6837020756219,1.84297879459336,"Sometimes","Public_Transportation","Obesity_Type_II",36.19436793
 "Male",25.140074,1.829529,120.996581,"yes","yes",3,3,"Sometimes","no",1.49901830591261,"no",1.37257749400491,1.78947324212641,"Sometimes","Public_Transportation","Obesity_Type_II",36.14885143
 "Male",30.722801,1.779325,120.751656,"yes","yes",2.519592,3,"Sometimes","no",2.31506258714944,"no",0,3.83309290185571,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.14016205
-"Male",30.916426,1.781139,120.794535,"yes","yes",2.111887,3,"Sometimes","no",3.8912468253726,"no",0,3.79486639052629,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.07602998
+"Male",30.916426,1.781139,120.794535,"yes","yes",2.111887,3,"Sometimes","no",3.8912468253726,"no",0,3.7948663905263,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.07602998
 "Male",31.010302,1.764166,119.373019,"yes","yes",2.970983,3,"Sometimes","no",2.1157840648666,"no",0,4.55393013777211,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.35546761
 "Male",30.605464,1.754796,118.805937,"yes","yes",2.907542,3,"Sometimes","no",2.9266221865037,"no",0,3.80422687996179,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.58201205
 "Male",24.622054,1.756509,117.368716,"yes","yes",1.451337,3,"Sometimes","no",1.49224588694051,"no",1.47037703825846,1.08793345559388,"Sometimes","Public_Transportation","Obesity_Type_II",38.04097108
@@ -1717,7 +1717,7 @@
 "Male",25.526746,1.783381,115.347176,"yes","yes",2.191429,3,"Sometimes","no",1.21193670877255,"no",1.50774633936674,1.85772580932826,"Sometimes","Public_Transportation","Obesity_Type_II",36.26758984
 "Male",25.523127,1.786532,114.534678,"yes","yes",2.100177,3,"Sometimes","no",0.535425114445388,"no",1.63298499194516,0.381947487592697,"Sometimes","Public_Transportation","Obesity_Type_II",35.88520239
 "Male",25.822348,1.766626,114.187096,"yes","yes",2.075321,3,"Sometimes","no",1.7692629864905,"no",1.71800788785404,1.78700071945786,"Sometimes","Public_Transportation","Obesity_Type_II",36.58708358
-"Male",25.879411,1.765464,114.144378,"yes","yes",1.626369,3,"Sometimes","no",0.0736165521666408,"no",1.48359967316336,0.874403868336231,"Sometimes","Public_Transportation","Obesity_Type_II",36.62155605
+"Male",25.879411,1.765464,114.144378,"yes","yes",1.626369,3,"Sometimes","no",0.0736165521666408,"no",1.48359967316336,0.87440386833623,"Sometimes","Public_Transportation","Obesity_Type_II",36.62155605
 "Male",30.361365,1.75853,111.635463,"yes","yes",1.263216,3.219347,"Sometimes","no",1.29837042395957,"no",0,1.20889377221465,"Sometimes","Personal_Vehicle","Obesity_Type_II",36.09961869
 "Male",30.451174,1.758539,111.950413,"yes","yes",1.067909,3.656401,"Sometimes","no",0.265749777667224,"no",0,0.594249725807458,"Sometimes","Personal_Vehicle","Obesity_Type_II",36.20109369
 "Male",40.564513,1.748015,109.758736,"yes","yes",2.310751,3.220181,"Sometimes","no",1.64952823403291,"no",1.14890354415107,1.01782764354721,"no","Personal_Vehicle","Obesity_Type_II",35.92103047
@@ -1736,7 +1736,7 @@
 "Male",30.717727,1.76714,120.344402,"yes","yes",2.117121,3,"Sometimes","no",3.88714047140422,"no",0,4.82273847563192,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.5375391
 "Male",26.734476,1.816197,119.622764,"yes","yes",2.247037,3,"Sometimes","no",0.622544729616493,"no",0,0.265340839046985,"Sometimes","Public_Transportation","Obesity_Type_II",36.26502031
 "Male",26.699317,1.839941,119.956651,"yes","yes",2.244654,3,"Sometimes","no",0.170766708441079,"no",0,0.0694610066711903,"Sometimes","Public_Transportation","Obesity_Type_II",35.43370281
-"Male",25.659092,1.84842,117.631707,"yes","yes",2.128574,3,"Sometimes","no",0.854557223618031,"no",1.63267311701864,0.89974033087492,"Sometimes","Public_Transportation","Obesity_Type_II",34.42889478
+"Male",25.659092,1.84842,117.631707,"yes","yes",2.128574,3,"Sometimes","no",0.85455722361803,"no",1.63267311701864,0.89974033087492,"Sometimes","Public_Transportation","Obesity_Type_II",34.42889478
 "Male",26.348156,1.830317,117.75701,"yes","yes",2.068834,3,"Sometimes","no",0.896714481292292,"no",1.61232695107305,0.747449649497867,"Sometimes","Public_Transportation","Obesity_Type_II",35.15071334
 "Male",37.638102,1.750085,118.114184,"yes","yes",2.073224,3,"Sometimes","no",1.79728176025674,"no",0,1.15035880589858,"Sometimes","Personal_Vehicle","Obesity_Type_II",38.56415049
 "Male",37.765356,1.763582,117.86159,"yes","yes",2.145114,2.888193,"Sometimes","no",0.255063590127975,"no",0,0.408856056630611,"Sometimes","Personal_Vehicle","Obesity_Type_II",37.89491877
@@ -1789,7 +1789,7 @@
 "Male",24.511445,1.852664,121.310257,"yes","yes",2.906269,2.894142,"Sometimes","no",1.65938195586205,"no",1.44119541813367,1.43675823463127,"Sometimes","Public_Transportation","Obesity_Type_II",35.34306404
 "Male",24.05331,1.872561,121.471077,"yes","yes",2.808027,2.683061,"Sometimes","no",1.02849549357779,"no",1.75639670673213,1.7349349251017,"Sometimes","Public_Transportation","Obesity_Type_II",34.6418386
 "Male",22.906886,1.81955,120.775439,"yes","yes",2.636719,2.806341,"Sometimes","no",1.91888542473316,"no",0.982692133479519,1.49708999227732,"Sometimes","Public_Transportation","Obesity_Type_II",36.47964777
-"Male",23.147644,1.815514,120.337664,"yes","yes",2.996717,2.791366,"Sometimes","no",1.45495903445408,"no",1.16745573761428,1.00556120416149,"Sometimes","Public_Transportation","Obesity_Type_II",36.50920467
+"Male",23.147644,1.815514,120.337664,"yes","yes",2.996717,2.791366,"Sometimes","no",1.45495903445408,"no",1.16745573761428,1.0055612041615,"Sometimes","Public_Transportation","Obesity_Type_II",36.50920467
 "Male",24.001889,1.614075,100.245302,"yes","yes",2.880483,1.703299,"Sometimes","no",2.4151232136564,"no",1.54249849061068,3.45256761135533,"no","Public_Transportation","Obesity_Type_II",38.47836472
 "Male",24.002404,1.609418,100.078367,"yes","yes",2.885693,1.685134,"Sometimes","no",2.6435957942158,"no",0,3.660061028786,"no","Public_Transportation","Obesity_Type_II",38.63692028
 "Male",30.71516,1.650189,101.141277,"yes","yes",2.913452,2.269799,"Sometimes","no",1.58518130914308,"no",1.74599284387948,1.01948136044666,"no","Public_Transportation","Obesity_Type_II",37.14163836
@@ -1799,7 +1799,7 @@
 "Male",25.512048,1.660761,104.321463,"yes","yes",2.748971,1.213431,"Sometimes","no",2.01012647524476,"no",0,3.04681018507108,"no","Public_Transportation","Obesity_Type_II",37.82329793
 "Male",26.844812,1.69151,102.59518,"yes","yes",2.680375,1.089048,"Sometimes","no",3.17878967519374,"no",0,3.63034124113619,"no","Public_Transportation","Obesity_Type_II",35.8573193
 "Female",25.919241,1.611462,102.093223,"yes","yes",3,3,"Sometimes","no",5.07464621779935,"no",0,3.00596367148682,"Sometimes","Public_Transportation","Obesity_Type_III",39.31486391
-"Female",26,1.584782,105.055597,"yes","yes",3,3,"Sometimes","no",0.546082630287856,"no",0,0.0308708325028419,"Sometimes","Public_Transportation","Obesity_Type_III",41.82925556
+"Female",26,1.584782,105.055597,"yes","yes",3,3,"Sometimes","no",0.546082630287856,"no",0,0.030870832502842,"Sometimes","Public_Transportation","Obesity_Type_III",41.82925556
 "Female",18.233541,1.792378,137.859737,"yes","yes",3,3,"Sometimes","no",0.748706993414089,"no",1.24082091085946,0.0220497162081301,"Sometimes","Public_Transportation","Obesity_Type_III",42.91194863
 "Female",18.147705,1.802257,149.935848,"yes","yes",3,3,"Sometimes","no",1.35407385532744,"no",1.54998115763856,1.99223509337753,"Sometimes","Public_Transportation","Obesity_Type_III",46.16066304
 "Female",26,1.65632,111.93301,"yes","yes",3,3,"Sometimes","no",1.15968047548085,"no",0,1.12143263453618,"Sometimes","Public_Transportation","Obesity_Type_III",40.80089508
@@ -1811,7 +1811,7 @@
 "Female",26,1.622771,109.959714,"yes","yes",3,3,"Sometimes","no",0.0356253604404628,"no",0,0.127328479662538,"Sometimes","Public_Transportation","Obesity_Type_III",41.75602276
 "Female",26,1.583889,110.545378,"yes","yes",3,3,"Sometimes","no",0.216382801067084,"no",0,0.520802574697882,"Sometimes","Public_Transportation","Obesity_Type_III",44.06472902
 "Female",21.334585,1.729045,131.529267,"yes","yes",3,3,"Sometimes","no",0.692724641645327,"no",1.32691919507286,0.175998201593757,"Sometimes","Public_Transportation","Obesity_Type_III",43.99565696
-"Female",22.978655,1.664622,114.465425,"yes","yes",3,3,"Sometimes","no",0.795823904452845,"no",0,0.701715099625289,"Sometimes","Public_Transportation","Obesity_Type_III",41.30884621
+"Female",22.978655,1.664622,114.465425,"yes","yes",3,3,"Sometimes","no",0.795823904452845,"no",0,0.70171509962529,"Sometimes","Public_Transportation","Obesity_Type_III",41.30884621
 "Female",21.01245,1.747773,127.902844,"yes","yes",3,3,"Sometimes","no",0.335279798600823,"no",0,0.176663015503436,"Sometimes","Public_Transportation","Obesity_Type_III",41.87069305
 "Female",21.056059,1.730113,152.094362,"yes","yes",3,3,"Sometimes","no",0.786486190278083,"no",0,0.352171973790973,"Sometimes","Public_Transportation","Obesity_Type_III",50.81175281
 "Female",18.771001,1.746652,133.800129,"yes","yes",3,3,"Sometimes","no",1.98312308173627,"no",1.33715948793195,1.74315879447386,"Sometimes","Public_Transportation","Obesity_Type_III",43.8574888
@@ -1852,7 +1852,7 @@
 "Female",25.968792,1.632896,104.988925,"yes","yes",3,3,"Sometimes","no",0.0111387481447309,"no",0,0.056181519292295,"Sometimes","Public_Transportation","Obesity_Type_III",39.37553236
 "Female",18.335019,1.771043,137.044959,"yes","yes",3,3,"Sometimes","no",0.177131307777017,"no",1.38126434596589,0.85890787653625,"Sometimes","Public_Transportation","Obesity_Type_III",43.69229465
 "Female",21.700748,1.789555,137.767787,"yes","yes",3,3,"Sometimes","no",1.74613311886787,"no",1.57982769899974,1.49642182281241,"Sometimes","Public_Transportation","Obesity_Type_III",43.01872963
-"Female",18.222536,1.801746,141.166265,"yes","yes",3,3,"Sometimes","no",0.179042823379859,"no",1.3236357600672,0.450155970640481,"Sometimes","Public_Transportation","Obesity_Type_III",43.48543222
+"Female",18.222536,1.801746,141.166265,"yes","yes",3,3,"Sometimes","no",0.179042823379859,"no",1.3236357600672,0.45015597064048,"Sometimes","Public_Transportation","Obesity_Type_III",43.48543222
 "Female",20.3756,1.787195,151.975864,"yes","yes",3,3,"Sometimes","no",0.687245735432953,"no",0,0.529787861276418,"Sometimes","Public_Transportation","Obesity_Type_III",47.58069042
 "Female",26,1.644141,111.942544,"yes","yes",3,3,"Sometimes","no",1.07837967178784,"no",0,1.17033171094954,"Sometimes","Public_Transportation","Obesity_Type_III",41.41112733
 "Female",26,1.643355,111.600553,"yes","yes",3,3,"Sometimes","no",1.53548308322206,"no",0,1.5495655182749,"Sometimes","Public_Transportation","Obesity_Type_III",41.32411539
@@ -2027,7 +2027,7 @@
 "Female",21.394047,1.792933,137.832414,"yes","yes",3,3,"Sometimes","no",0.879052242031321,"no",0.843482382882773,0.538773144595325,"Sometimes","Public_Transportation","Obesity_Type_III",42.87688644
 "Female",21.838323,1.758959,137.79299,"yes","yes",3,3,"Sometimes","no",0.872388206422329,"no",1.06978139861215,0.628156512975693,"Sometimes","Public_Transportation","Obesity_Type_III",44.5364597
 "Female",18.20634,1.807406,141.799429,"yes","yes",3,3,"Sometimes","no",1.24640529090539,"no",1.59080298067512,1.633789004758,"Sometimes","Public_Transportation","Obesity_Type_III",43.40732697
-"Female",18.532826,1.75091,142.545183,"yes","yes",3,3,"Sometimes","no",0.335521728964522,"no",1.27446206682367,0.840280676260591,"Sometimes","Public_Transportation","Obesity_Type_III",46.49699643
+"Female",18.532826,1.75091,142.545183,"yes","yes",3,3,"Sometimes","no",0.335521728964522,"no",1.27446206682367,0.84028067626059,"Sometimes","Public_Transportation","Obesity_Type_III",46.49699643
 "Female",20.438478,1.805803,153.149491,"yes","yes",3,3,"Sometimes","no",0.8177923662588,"no",0,0.659524202812463,"Sometimes","Public_Transportation","Obesity_Type_III",46.96505306
 "Female",20.796266,1.796538,152.473675,"yes","yes",3,3,"Sometimes","no",0.21585292275995,"no",0,0.284238231368363,"Sometimes","Public_Transportation","Obesity_Type_III",47.2413231
 "Female",26,1.634894,111.946321,"yes","yes",3,3,"Sometimes","no",0.4720049938187,"no",0,0.784852237440646,"Sometimes","Public_Transportation","Obesity_Type_III",41.88230986
@@ -2036,7 +2036,7 @@
 "Female",26,1.641849,111.682693,"yes","yes",3,3,"Sometimes","no",1.82422850187868,"no",0,1.65378019260243,"Sometimes","Public_Transportation","Obesity_Type_III",41.43043107
 "Female",26,1.621167,104.947703,"yes","yes",3,3,"Sometimes","no",0.408518471755087,"no",0,0.00285229971632361,"Sometimes","Public_Transportation","Obesity_Type_III",39.93166583
 "Female",25.992898,1.638075,105.036522,"yes","yes",3,3,"Sometimes","no",0.692264886107296,"no",0,0.860234602820128,"Sometimes","Public_Transportation","Obesity_Type_III",39.14468191
-"Female",26,1.60937,105.407313,"yes","yes",3,3,"Sometimes","no",0.572179323760793,"no",0,0.322246612515301,"Sometimes","Public_Transportation","Obesity_Type_III",40.6966761
+"Female",26,1.60937,105.407313,"yes","yes",3,3,"Sometimes","no",0.572179323760793,"no",0,0.3222466125153,"Sometimes","Public_Transportation","Obesity_Type_III",40.6966761
 "Female",26,1.608283,105.359688,"yes","yes",3,3,"Sometimes","no",0.0629577476065606,"no",0,0.843259260058403,"Sometimes","Public_Transportation","Obesity_Type_III",40.73329413
 "Female",25.951737,1.629442,104.835346,"yes","yes",3,3,"Sometimes","no",1.23931085458025,"no",0,1.15158805157989,"Sometimes","Public_Transportation","Obesity_Type_III",39.48479796
 "Female",25.982261,1.629225,104.838425,"yes","yes",3,3,"Sometimes","no",0.840755398152396,"no",0,0.577739477157593,"Sometimes","Public_Transportation","Obesity_Type_III",39.49647677
@@ -2065,7 +2065,7 @@
 "Female",20.952737,1.730333,132.116491,"yes","yes",3,3,"Sometimes","no",1.64252280141227,"no",1.48766388366223,1.07409964129329,"Sometimes","Public_Transportation","Obesity_Type_III",44.12631383
 "Female",20.978166,1.721057,132.054793,"yes","yes",3,3,"Sometimes","no",0.729223808972165,"no",1.68323324275067,0.0126207391731441,"Sometimes","Public_Transportation","Obesity_Type_III",44.58242223
 "Female",21.67447,1.71978,132.262558,"yes","yes",3,3,"Sometimes","no",1.6820737242233,"no",1.41685337417495,1.4709789310582,"Sometimes","Public_Transportation","Obesity_Type_III",44.71890181
-"Female",21.568951,1.699315,133.10761,"yes","yes",3,3,"Sometimes","no",0.989158323267475,"no",1.75745735070569,0.819054563529789,"Sometimes","Public_Transportation","Obesity_Type_III",46.09513631
+"Female",21.568951,1.699315,133.10761,"yes","yes",3,3,"Sometimes","no",0.989158323267475,"no",1.75745735070569,0.81905456352979,"Sometimes","Public_Transportation","Obesity_Type_III",46.09513631
 "Female",23.647935,1.681394,114.479459,"yes","yes",3,3,"Sometimes","no",0.277747109299526,"no",0,0.674668239429593,"Sometimes","Public_Transportation","Obesity_Type_III",40.4938045
 "Female",24.196367,1.697421,114.482386,"yes","yes",3,3,"Sometimes","no",0.890351716894656,"no",0,0.0040031960234046,"Sometimes","Public_Transportation","Obesity_Type_III",39.73374777
 "Female",24.284833,1.650726,113.774198,"yes","yes",3,3,"Sometimes","no",0.328281226335093,"no",0,0.232087690848857,"Sometimes","Public_Transportation","Obesity_Type_III",41.75358779
