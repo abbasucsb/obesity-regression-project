@@ -248,7 +248,17 @@ corrplot(cor_mat, method="number", "upper")
 ## `r bfcolor("Simple Linear Regression", "red")` \ 
 
 ### Hypothesis
-We would like to perform simple linear regression of BMI (`BMI`) on frequency of physical activity (`FAF`). Our hypothesis are as follows:
+We would like to perform simple linear regression of BMI (`BMI`) on frequency of physical activity (`FAF`). 
+```{r}
+ggplot(obesityData, aes(x=FAF, y=BMI)) +
+  geom_point() +
+  xlab("Frequency of physical activity (days)") +
+  ylab("BMI") +
+  ggtitle("BMI vs Frequency of physical activity scatter")
+```
+
+
+Our hypothesis are as follows:
 $$
 \begin{aligned}
 H_0&: \beta_1=0\\
