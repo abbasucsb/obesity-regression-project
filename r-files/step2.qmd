@@ -86,8 +86,8 @@ obesityData <- read.csv("../data/BMI_data.csv")
 ### Hypothesis 1
 $$
 \begin{aligned}
-H_0&: \text{Family history does not affect BMI} \\
-H_A&: \text{There is a significant relationship between family history and BMI}
+H_0&: \text{There is no significant correlation between family history of obesity and BMI} \\
+H_A&: \text{There is a significant correlation between family history and BMI}
 \end{aligned}
 $$
 
@@ -95,7 +95,7 @@ $$
 ### Hypothesis 2
 $$
 \begin{aligned}
-H_0&: \text{No particular eating habit has any effect on BMI} \\
+H_0&: \text{No particular eating habit has any significant effect on BMI} \\
 H_A&: \text{At least 1 eating habit has a significant effect on BMI}
 \end{aligned}
 $$
@@ -107,7 +107,33 @@ $$
 ## `r bfcolor(" Exploratory Data Analysis (EDA)", "red")` \  
 
 ### Data Cleaning
-For our dataset, we did not have any missing or null values. The only form of processing we did was to create a new column called `BMI` for the continuous variable of body-mass index.
+For our dataset, we did not have any missing or null values. The first form of processing we did was to create a new column called `BMI` for the continuous variable of body-mass index.
+
+Additionally, as per Professor Abuzaid's suggestion, we used functions `rnorm()`, `runif()`, and `rexp()`, to turn integer/categorical variables from the dataset into real continuous variables. We used the paper that came with the dataset to correctly map the right values for each category.
+
+
+
+```{r}
+set.seed(1234566)
+n <- nrow(obesityData)
+obesityData$FAF <- case_when(
+  obesityData$FAF < 1 ~ 0,
+  obesityData$FAF >= 1 & obesityData$FAF < 2 ~ rnorm(n, 1.5, 0.25),
+  obesityData$FAF >= 2 & obesityData$FAF < 3 ~ rnorm(n, 3, .5),
+  obesityData$FAF >= 3 ~ rnorm(n, 4.5, 0.25)
+)
+obesityData$TUE <- case_when(
+  obesityData$TUE < 1 ~ runif(n, 0,2),
+  obesityData$TUE >= 1 & obesityData$TUE < 2 ~ runif(n, 3, 5),
+  obesityData$TUE >= 2 ~ rexp(n, 1) + 5
+)
+obesityData$CH2O <- case_when(
+  obesityData$TUE < 1 ~ runif(n, 0,1),
+  obesityData$TUE >= 1 & obesityData$TUE < 2 ~ runif(n, 1, 2),
+  obesityData$TUE >= 2 ~ rexp(n, 1) + 2
+)
+```
+
 
 
 
@@ -199,7 +225,7 @@ a+b + plot_layout(ncol = 2)
 ```
 ```{r, fig.width=10, fig.height=5, echo=FALSE}
 ggplot(obesityData, aes(x=BMI)) +
-  geom_histogram(aes(y=..density..),bins=30, fill="lightblue", color="black", alpha=0.6) +
+  geom_histogram(aes(y=..density..),bins=15, fill="lightblue", color="black", alpha=0.6) +
   stat_function(fun=dnorm, args=list(mean=mean(obesityData$BMI),
                                      sd=sd(obesityData$BMI)),
                 color="red", linewidth=1) +
@@ -222,7 +248,17 @@ corrplot(cor_mat, method="number", "upper")
 ## `r bfcolor("Simple Linear Regression", "red")` \ 
 
 ### Hypothesis
-We would like to perform simple linear regression of BMI (`BMI`) on frequency of physical activity (`FAF`). Our hypothesis are as follows:
+We would like to perform simple linear regression of BMI (`BMI`) on frequency of physical activity (`FAF`). 
+```{r}
+ggplot(obesityData, aes(x=FAF, y=BMI)) +
+  geom_point() +
+  xlab("Frequency of physical activity (days)") +
+  ylab("BMI") +
+  ggtitle("BMI vs Frequency of physical activity scatter")
+```
+
+
+Our hypothesis are as follows:
 $$
 \begin{aligned}
 H_0&: \beta_1=0\\
@@ -297,5 +333,9 @@ data.frame(fitted_values, residuals) %>%
   theme_minimal()
 ```
 Figure Y shows the spread of residuals. We should notice that there are four densely populated regions of residuals that may be due to rounding of answers. Also, notice how fitted values below 28 do not have residuals larger than 10 as opposed to other fitted values. As we are able to draw on some patterns in our residual plot, it may be beneficial to use a different model or fit our model to jittered values to eliminate the rounding effect in the future.
+
+```{r}
+write.csv(obesityData, "../data/data-cleaned.csv", row.names = FALSE)
+```
 
 ### Conclusion
