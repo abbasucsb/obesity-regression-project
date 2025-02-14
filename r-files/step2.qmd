@@ -70,7 +70,7 @@ library(ggplot2)
 library(dplyr)
 
 # Input data
-obesityData <- read.csv("../data/BMI_data.csv")
+obesityData <- read.csv("../data/BMI_data2.csv")
 ```
 
 
