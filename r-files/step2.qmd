@@ -111,6 +111,7 @@ For our dataset, we did not have any missing or null values. The first form of p
 
 Additionally, as per Professor Abuzaid's suggestion, we used functions `rnorm()`, `runif()`, and `rexp()`, to turn integer/categorical variables from the dataset into real continuous variables. We used the paper that came with the dataset to correctly map the right values for each category.
 
+Finally, we combined the "Always" level in CALC into the "Frequent" level due to a lack of entries in "Always." We combined the "Automobile" and "Motorbike" levels in MTRANS into "Personal_Vehicle" due to a lack of entries in "Motorbike." Lastly, we combined the "Walking" and "Bike" levels in MTRANS into "Active_Transportation" due to a lack of entries in "Bike."
 
 
 ```{r}
