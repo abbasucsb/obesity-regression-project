@@ -1,0 +1,30 @@
+---
+title: "126-Final"
+author: "Tasha Lee"
+date: "2025-03-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract
+
+# Introduction
+
+# Data Processing
+
+# Exploratory Data Analysis
+
+# Visualizations
+
+# Explain your regression model
+
+# Interpret your results
+
+# Check assumptions
+
+# Recommendations
+
+# Conclusion
