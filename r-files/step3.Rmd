@@ -1,0 +1,127 @@
+---
+title: 'Final Project - Step 3'
+subtitle: "PSTAT100: Data Science Concepts and Analysis" 
+
+author:
+  - name: "Ali Abuzaid"
+    affiliations:
+      - name: "Fall 2024"
+affiliation-title: "Quarter"
+format: 
+ pdf: 
+    latex_engine: xelatex
+    geometry: "a4paper, margin=0.5in"
+    code-fold: true
+    code-line-numbers: true
+    code-copy: true
+    code-tools: true
+    self-contained: true
+    toc: false
+    toc-location: left
+    number-sections: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message =  FALSE)
+knitr::opts_chunk$set(warning =  FALSE)
+knitr::opts_chunk$set(error =  FALSE)
+bfcolor <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
+  } else x
+}
+```
+
+
+:::callout
+<div style="text-align: center">
+<span style="color: blue;"> **STUDENT NAME **</span> 
+</div>
+- STUDENT 1    (NetID 1)
+- STUDENT 2    (NetID 2)
+- STUDENT 3    (NetID 3)
+- STUDENT 4    (NetID 4)
+- STUDENT 5    (NetID 5)
+:::
+
+# Research Questions
+```{r data}
+data <- read.csv("../data/data-cleaned.csv")
+```
+
+
+
+## Hypothesis 2 - Eating Habits
+
+### Initial Regression Analysis
+```{r}
+# lambda <- 0.6
+# data$BMI <- (data$BMI^lambda - 1) / lambda
+model_eating <- lm(BMI~FAVC+ FCVC+ NCP+ CAEC+ CH2O+ SCC+ CALC,data)
+s <- summary(model_eating)
+knitr::kable(matrix(
+  c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
+    pf(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
+       lower.tail = FALSE),s$adj.r.squared),byrow = TRUE,nrow = 1
+), col.names = c("F-stat","df1","df2","p-val", "R^2"),
+caption="Overall Model Performance", digits = 200)
+knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
+``` 
+### Model Adjustments
+First, we drop insignificant parameters from the model and combine certain levels in categorical variables.
+```{r}
+data$CALC[data$CALC=="Sometimes"] <- "Yes"
+data$CALC[data$CALC=="Frequently"] <- "Yes"
+
+data$CAEC[data$CAEC=="Sometimes"] <- "Rarely"
+data$CAEC[data$CAEC=="no"] <- "Rarely"
+
+model_eating_u <- lm(BMI~FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data)
+s<-summary(model_eating_u)
+knitr::kable(matrix(
+  c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
+    pf(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
+       lower.tail = FALSE),s$adj.r.squared),byrow = TRUE,nrow = 1
+), col.names = c("F-stat","df1","df2","p-val", "R^2"),
+caption="Overall Model Performance", digits = 200)
+knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
+```
+
+### Model Assumptions
+Next, we check this updated model to see if the residuals match our assumptions of:
+1. Normality
+2. Homoscedasticity
+3. Independence
+4. Linearity
+```{r, fig.width=8, fig.height=8}
+par(mfrow = c(2, 2))
+plot(model_eating_u)
+```
+Based on these plots, we can observe the following:
+```{r echo=FALSE}
+output <- matrix(
+  c("Residuals vs. Fitted", "Funnel Shape indicates heteroscedasticity. No curvature to indicate nonlinearity",
+    "Q-Q", "Vast majority of the points are on the line -- apears normal",
+    "Scale-Location", "Funnel shape indicates heteroscedasticity",
+    "residuals vs. Leverage", "Entry 345 possible influential point"),
+  byrow=TRUE,nrow=4
+)
+knitr::kable(output,caption="Plot Interpretation")
+```
+Therefore, a transformation is in order. We begin with a box-cox transformation on the response variable.
+```{r, fig.width=8, fig.height=8}
+library(MASS)
+suppressWarnings({
+bc <- boxcox(model_eating_u, lambda=seq(-2,2,by=0.1),plotit=FALSE)
+})
+best_lambda <- bc$x[which.max(bc$y)]
+
+data$BMI <- (data$BMI^best_lambda - 1) / best_lambda
+model_eating_u <- lm(BMI~FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data)
+par(mfrow = c(2, 2))
+plot(model_eating_u)
+```
+
+
+### Analysis
