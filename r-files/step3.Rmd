@@ -48,16 +48,25 @@ bfcolor <- function(x, color) {
 # Abstract
 
 # Introduction
-Body Mass Index (BMI) is commonly believed to be influenced by various lifestyle and dietary factors, including food consumption habits, hydration levels, and alcohol intake. This study aims to analyze the relationship between different consumption behaviors and BMI through multiple linear regression to determine whether any particular habit *actually* a significant impact. Using a dataset containing information on dietary patterns from the [UCI Machine Learning Repository] (https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition), we explore the link between consumption habits and BMI.
+Body Mass Index (BMI) is commonly believed to be influenced by various lifestyle and dietary factors, including food consumption habits, hydration levels, alcohol intake, and frequency of physical activity. This study aims to analyze the relationship between different consumption and activity behaviors and BMI through linear regression to determine whether any particular habit has a significant impact on BMI. Using a dataset containing information on dietary patterns from the [UCI Machine Learning Repository] (https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition), we explore the link between consumption habits and BMI.
 
-In this model, we include predictors such as the frequency of consuming high-caloric foods (FAVC), eating between meals (CAEC), alcohol consumption (CALC), and daily calorie monitoring (SCC), water intake (CH2O), and vegetable consumption (FCVC).
+In this model, we include predictors such as the frequency of consuming high-caloric foods (FAVC), eating between meals (CAEC), alcohol consumption (CALC), and daily calorie monitoring (SCC), water intake (CH2O), vegetable consumption (FCVC), and frequecy of physical exercise (FAF).
 
 ### Hypothesis
+We would like to focus on two key research questions:
+1) Does frequency of physical activity have any significant impact on BMI?
+
 $$
 \begin{aligned}
 H_0&: \text{No particular consumption habit has any significant effect on BMI} \\
 H_A&: \text{At least 1 consumption habit has a significant effect on BMI}
 \end{aligned}
+$$
+2) Do particular consumption habits have any significant impact on BMI?
+$$
+\begin{aligned}
+H_0&: \text{Frequency of physical activity has no significant impact on BMI} \\
+H_A&: \text{Frequency of physical activity has a significant impact on BM}
 $$
 # Data processing
 ###Initial Regression Analysis
@@ -96,12 +105,6 @@ knitr::kable(matrix(
 caption="Overall Model Performance", digits = 200)
 knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
 ```
-
-
-## Research Questions
-
-
-## Hypothesis 2 - Eating Habits
 
 # Exploratory Data Analysis
 ### Null values
@@ -143,6 +146,11 @@ plot(BMI ~ FCVC, data = data, col = "darkolivegreen1", main = "BMI vs FCVC",
 model_fcvc <- lm(BMI ~ FCVC, data = data)
 abline(model_fcvc, col = "darkgreen", lwd = 2)
 
+plot(BMI ~ FAF, data = data, col = "mediumpurple1", main = "BMI vs FAF",
+        xlab = 'How often do you have physical activity??')
+model_FAF <- lm(BMI ~ FAF, data = data)
+abline(model_FAF, col = "mediumpurple4", lwd = 2)
+
 ```
 From this EDA, we can see that for the categorical variables already have some effect on the BMI.
 
@@ -151,6 +159,7 @@ Predictors associated with higher BMI:
 - frequently drinking alcohol (CALC)
 - not counting calories (SCC)
 - frequent consumption of high calorie food (FAVC)
+- low frequency of physical activity (FAF)
 
 
 >Issue here bc the how often you drink alchol is yes/no from merging rows
@@ -166,9 +175,70 @@ cor_matrix <- cor(corrplot_data)
 corrplot(cor_matrix, method="number")
 ```
 
-# Visualizations
 
 # Explain your regression model
+# * Hypothesis 1*
+First, we can investigate whether frequency of physical activity has an impact on BMI. Our hypothesis are as follows:
+$$
+\begin{aligned}
+H_0&: \beta_1=0\\
+H_A&: \beta_1\neq0 \text{ ; where }\beta_1\text{ is the slope coefficient}
+\end{aligned}
+$$
+
+Thus, the null hypothesis states that there is no linear relationship between BMI and frequency of physical activity and the alternative hypothesis is that there exists a linear relationship between BMI and frequency of physical activity.
+Our linear model is as follows
+$$ BMI=\beta_0+\beta_1Age+e $$
+```{r}
+# Fit linear model
+BMIonFAF <- lm(BMI ~ FAF, data=obesityData)
+
+# Get the summary of the model
+BMIonFAF_summary <- summary(BMIonFAF)
+
+# Format the coefficients and p-values
+formatted_coefficients <- matrix(as.character(signif(
+  BMIonFAF_summary$coefficients, 4)), ncol = 4)
+
+colnames(formatted_coefficients) <- c("Estimate", "Std. Error",
+                                      "t value", "p-value")
+rownames(formatted_coefficients) <- c('Intercept',
+                                      'Frequency of\nphysical activity')
+
+
+kable(formatted_coefficients,
+      caption = 'Fig. X: Simple Linear Regression of BMI on Frequency of Physical Activity')
+```
+The results of the simple linear model can be shown above in Figure X. At $\alpha=0.05$, we observe that our p-value, the probability that we observe a sample as or more extreme than our observed values given there is no relationship between BMI and frequency of physical activity is $p < 6.159e^{-36}$, or essentially 0. Thus, we reject our null hypothesis given we have statistically significant evidence that frequency of exercise impacts BMI. The slope coefficient $\hat{\beta_1}=-1.689$ states that for every one day per week increase in frequency of physical activity, our model predicts that BMI will decrease by 1.689 kilograms per meter.
+
+Next, we can assess the goodness of fit of our model where $R^2=$ `r round(summary(BMIonFAF)$r.squared, 4)`. Thus, our model of BMI on frequency of physical activity accounts for 3.15% of total variability in BMI. As this value is rather low, we can examine why our model may not be a good fit using residual plots.
+```{r}
+# Generate residual plot
+# Create residuals and fitted values
+residuals <- resid(BMIonFAF)
+fitted_values <- fitted(BMIonFAF)
+
+data.frame(fitted_values, residuals) %>% 
+  ggplot(aes(x = fitted_values,
+             y = residuals)) +
+  geom_point() +
+  labs(title = "Fig. Y: Residuals vs Fitted Values",
+       x = "Fitted Values",
+       y = "Residuals") +
+  theme_minimal()
+```
+Figure Y shows the spread of residuals. We should notice that there are four densely populated regions of residuals that may be due to rounding of answers. Also, notice how fitted values below 28 do not have residuals larger than 10 as opposed to other fitted values. As we are able to draw on some patterns in our residual plot, it may be beneficial to use a different model or fit our model to jittered values to eliminate the rounding effect in the future.
+
+```{r}
+write.csv(obesityData, "../data/data-cleaned.csv", row.names = FALSE)
+```
+
+### Conclusion
+
+We conclude at the significance level $\alpha < 0.05$ that there is a significant relationship between BMI and frequency of physical exercise, which is modeled by a nonzero coefficient in the linear model. So, we reject the null hypothesis. Moreover, while this model is saying that there is a significant relationship between these two variables that we cannot neglect, the simple linear regression model still leaves a lot of variance in the data unexplained, making us unable to accurately predict BMI with only the knowledge of one's physical activity habits.
+
+
+# *Hypothesis 2*
 ```{r}
 full_model <- lm(BMI ~ FAVC + FCVC +NCP+ CAEC 
                  , data = data)
