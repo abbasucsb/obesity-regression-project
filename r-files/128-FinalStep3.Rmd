@@ -119,6 +119,22 @@ par(mfrow = c(2, 2))
 ### Null values
 For our dataset, we did not have any missing or null values. 
 
+### Summary Statistics
+```{r}
+#Quantitative Summary Statistics
+quant_vars <- obesityData %>%
+  select(where(is.numeric))
+summary_stats <-summary(quant_vars)
+
+kable(summary_stats, col.names = colnames(quant_vars), 
+      caption = "Summary Statistics for Quantitative Variables")
+
+#Qualitative Summary Statistics
+
+
+```
+
+
 ### Boxplots & Scatterplots
 
 For each variable in the multiple linear regression, we first created boxplots for categorical predictors and scatterplots for continuous predictors to display and to gain a better understanding the individual relationships between our variables.
