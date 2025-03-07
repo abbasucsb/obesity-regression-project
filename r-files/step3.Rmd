@@ -326,7 +326,7 @@ plot(wls_model, caption="Weighted Regression Residuals")
 
 # Results
 
-Our results indicate that a multiple linear regression model with the factors FAVC, CAEC, SCC, CALC, FCVC, and CH2O where the age is greater than 26 is ideal. Under the adjusted model summary statistics, the factors are all significant with p-value < 0.05. 
+Our results indicate that a multiple linear regression model regressing BMI on eating habits is overall statistically significant at the $\alpha=0.05$ significance level. Under the adjusted model summary statistics, the factors are all significant with p-value < 0.05. Therefore, we reject the null hypothesis and accept that alternate hypothesis that at least one predictor has a significant effect on BMI.
 
 Notable results include that the coefficient for the binary predictor GenderMale is -0.6433362 with respect to the reference level (female). This means men generally have a BMI around half a point lower than women.
 
@@ -339,7 +339,9 @@ The variable CALCSometimes (How often do you drink alcohol? "sometimes") has a c
 Overall, these findings suggest that dietary habits, calorie awareness, and alcohol consumption patterns play a significant role in BMI variations.
 
 # Recommendations
-lkjdsafsdalkf
+For our multivariable regression model using eating habits, we had to go through multiple model transformations and adjustments, ending with a model that still did not meet certain residual assumptions. While filtering the data and only selecting observations that contained an Age of 26 or greater did remove a significant amount of heteroscedasticity, our residuals lost most of its normality in the process. Therefore, one recommendation of ours is to find a dataset that contains a sample more representative of the larger population of people. Another approach could be to only consider a specific population, such as adults below the age of 50 that do some form of physical activity consistently. 
+
+With regards to our attempt at linear regression, an alternate approach could be to consider non-linear models, such as a neural network. Many of the residual assumptions we were struggling to meet would no longer be required.  So, this could potentially capture more variance in the data and decrease the Mean Standard Error. 
 
 # Conclusion
 dffda
