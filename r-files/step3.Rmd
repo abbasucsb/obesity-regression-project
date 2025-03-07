@@ -325,7 +325,7 @@ plot(wls_model, caption="Weighted Regression Residuals")
 ```
 
 # Results
-We 
+
 Our results indicate that a multiple linear regression model with the factors FAVC, CAEC, SCC, CALC, FCVC, and CH2O where the age is greater than 26 is ideal. Under the adjusted model summary statistics, the factors are all significant with p-value < 0.05. 
 
 Notable results include that the coefficient for the binary predictor GenderMale is -0.6433362 with respect to the reference level (female). This means men generally have a BMI around half a point lower than women.
