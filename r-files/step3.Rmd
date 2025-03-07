@@ -24,6 +24,7 @@ format:
 knitr::opts_chunk$set(message =  FALSE)
 knitr::opts_chunk$set(warning =  FALSE)
 knitr::opts_chunk$set(error =  FALSE)
+knitr::opts_chunk$set(echo =  FALSE)
 bfcolor <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{\\textbf{%s}}", color, x)
@@ -31,6 +32,9 @@ bfcolor <- function(x, color) {
     sprintf("<span style='color: %s;'><b>%s</b></span>", color, x)
   } else x
 }
+library(knitr)
+library(dplyr)
+library(ggplot2)
 ```
 
 
@@ -67,44 +71,16 @@ $$
 \begin{aligned}
 H_0&: \text{Frequency of physical activity has no significant impact on BMI} \\
 H_A&: \text{Frequency of physical activity has a significant impact on BM}
+\end{aligned}
 $$
+
 # Data processing
-###Initial Regression Analysis
-```{r}
-data <- read.csv("../data/data-cleaned.csv")
 
-# lambda <- 0.6
-# data$BMI <- (data$BMI^lambda - 1) / lambda
-model_eating <- lm(BMI~FAVC+ FCVC+ NCP+ CAEC+ CH2O+ SCC+ CALC,data)
-s <- summary(model_eating)
-knitr::kable(matrix(
-  c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
-    pf(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
-       lower.tail = FALSE),s$adj.r.squared),byrow = TRUE,nrow = 1
-), col.names = c("F-stat","df1","df2","p-val", "R^2"),
-caption="Overall Model Performance", digits = 200)
-knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
+For our dataset, we did not have any missing or null values. The first form of processing we did was to create a new column called `BMI` for the continuous variable of body-mass index.
 
-```
-### Model Adjustments
-First, we drop insignificant parameters from the model and combine certain levels in categorical variables.
-```{r}
-data$CALC[data$CALC=="Sometimes"] <- "Yes"
-data$CALC[data$CALC=="Frequently"] <- "Yes"
+Additionally, as per Professor Abuzaid's suggestion, we used functions `rnorm()`, `runif()`, and `rexp()`, to turn integer/categorical variables from the dataset into real continuous variables. We used the paper that came with the dataset to correctly map the right values for each category.
 
-data$CAEC[data$CAEC=="Sometimes"] <- "Rarely"
-data$CAEC[data$CAEC=="no"] <- "Rarely"
-
-model_eating_u <- lm(BMI~FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data) # combined levels with 6 predictors
-s<-summary(model_eating_u)
-knitr::kable(matrix(
-  c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
-    pf(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
-       lower.tail = FALSE),s$adj.r.squared),byrow = TRUE,nrow = 1
-), col.names = c("F-stat","df1","df2","p-val", "R^2"),
-caption="Overall Model Performance", digits = 200)
-knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
-```
+Finally, we combined the "Always" level in CALC into the "Frequent" level due to a lack of entries in "Always." We combined the "Automobile" and "Motorbike" levels in MTRANS into "Personal_Vehicle" due to a lack of entries in "Motorbike." Lastly, we combined the "Walking" and "Bike" levels in MTRANS into "Active_Transportation" due to a lack of entries in "Bike."
 
 # Exploratory Data Analysis
 ### Null values
@@ -115,6 +91,7 @@ For our dataset, we did not have any missing or null values.
 For each variable in the multiple linear regression, we first created boxplots for categorical predictors and scatterplots for continuous predictors to display and to gain a better understanding the individual relationships between our variables.
 
 ```{r}
+data <- read.csv('../data/data-cleaned.csv')
 # categorical variables 
 par(mfrow = c(2,3))
 boxplot(BMI ~ FAVC, data = data, col = "lightgreen", 
@@ -177,7 +154,8 @@ corrplot(cor_matrix, method="number")
 
 
 # Explain your regression model
-# * Hypothesis 1*
+
+## Hypothesis 1
 First, we can investigate whether frequency of physical activity has an impact on BMI. Our hypothesis are as follows:
 $$
 \begin{aligned}
@@ -190,6 +168,7 @@ Thus, the null hypothesis states that there is no linear relationship between BM
 Our linear model is as follows
 $$ BMI=\beta_0+\beta_1Age+e $$
 ```{r}
+obesityData<- read.csv('../data/data-cleaned.csv')
 # Fit linear model
 BMIonFAF <- lm(BMI ~ FAF, data=obesityData)
 
@@ -229,43 +208,19 @@ data.frame(fitted_values, residuals) %>%
 ```
 Figure Y shows the spread of residuals. We should notice that there are four densely populated regions of residuals that may be due to rounding of answers. Also, notice how fitted values below 28 do not have residuals larger than 10 as opposed to other fitted values. As we are able to draw on some patterns in our residual plot, it may be beneficial to use a different model or fit our model to jittered values to eliminate the rounding effect in the future.
 
-```{r}
-write.csv(obesityData, "../data/data-cleaned.csv", row.names = FALSE)
-```
-
 ### Conclusion
 
 We conclude at the significance level $\alpha < 0.05$ that there is a significant relationship between BMI and frequency of physical exercise, which is modeled by a nonzero coefficient in the linear model. So, we reject the null hypothesis. Moreover, while this model is saying that there is a significant relationship between these two variables that we cannot neglect, the simple linear regression model still leaves a lot of variance in the data unexplained, making us unable to accurately predict BMI with only the knowledge of one's physical activity habits.
 
 
-# *Hypothesis 2*
-```{r}
-full_model <- lm(BMI ~ FAVC + FCVC +NCP+ CAEC 
-                 , data = data)
-summary(full_model)
-```
-###Step Wise model starting with intercept
-```{r}
-model_stepwise <- step(lm(BMI ~1, data = data), direction = "both", scope = formula(full_model))
-```
-###Backwards Model
-```{r}
-backward_model <- step(full_model, direction = "backward", )
-backward_model
-```
-
-###Forward Model
-```{r}
-forward_model <- step(lm(BMI ~1, data = data), direction = "forward", scope = formula(full_model))
-forward_model
-```
-All versions ended up with the full model as the end result.
+## Hypothesis 2
 
 ### Initial Regression Analysis
 ```{r}
+data <- read.csv("../data/data-cleaned.csv")
 # lambda <- 0.6
 # data$BMI <- (data$BMI^lambda - 1) / lambda
-model_eating <- lm(BMI~FAVC+ FCVC+ NCP+ CAEC+ CH2O+ SCC+ CALC,data)
+model_eating <- lm(BMI~Gender+Age+FAVC+ FCVC+ NCP+ CAEC+ CH2O+ SCC+ CALC,data)
 s <- summary(model_eating)
 knitr::kable(matrix(
   c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
@@ -274,7 +229,9 @@ knitr::kable(matrix(
 ), col.names = c("F-stat","df1","df2","p-val", "R^2"),
 caption="Overall Model Performance", digits = 200)
 knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
-``` 
+
+```
+
 ### Model Adjustments
 First, we drop insignificant parameters from the model and combine certain levels in categorical variables.
 ```{r}
@@ -284,7 +241,7 @@ data$CALC[data$CALC=="Frequently"] <- "Yes"
 data$CAEC[data$CAEC=="Sometimes"] <- "Rarely"
 data$CAEC[data$CAEC=="no"] <- "Rarely"
 
-model_eating_u <- lm(BMI~FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data)
+model_eating_u <- lm(BMI~Gender+Age+FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data) # combined levels with 8 predictors
 s<-summary(model_eating_u)
 knitr::kable(matrix(
   c(s$fstatistic[[1]],s$fstatistic[[2]],s$fstatistic[[3]],
@@ -295,18 +252,26 @@ caption="Overall Model Performance", digits = 200)
 knitr::kable(s$coefficients, caption="Coefficient Analysis", digits=200)
 ```
 
-# Results
+### Model Assumptions
 
-# Check Assumptions
 Next, we check this updated model to see if the residuals match our assumptions of:
 1. Normality
+
 2. Homoscedasticity
+
 3. Independence
+
 4. Linearity
+
 ```{r, fig.width=8, fig.height=8}
 par(mfrow = c(2, 2))
 plot(model_eating_u)
 ```
+
+
+
+
+
 Based on these plots, we can observe the following:
 ```{r echo=FALSE}
 output <- matrix(
@@ -318,22 +283,44 @@ output <- matrix(
 )
 knitr::kable(output,caption="Plot Interpretation")
 ```
-Therefore, a transformation is in order. We begin with a box-cox transformation on the response variable.
+Therefore, a transformation is in order. We begin by splitting our data to only include observations where the age is greater than 26.
+```{r}
+data <- data[data$Age>26,]
+model_eating_u <- lm(BMI~Gender+Age+FAVC+ CAEC+ SCC+ CALC+ FCVC+ CH2O,data)
+```
 ```{r, fig.width=8, fig.height=8}
+par(mfrow = c(2, 2))
+plot(model_eating_u)
+```
+
+We then attempt a box-cox transformation on the response variable.
+```{r, fig.width=6, fig.height=4}
 library(MASS)
 suppressWarnings({
 bc <- boxcox(model_eating_u, lambda=seq(-2,2,by=0.1),plotit=FALSE)
 })
 best_lambda <- bc$x[which.max(bc$y)]
 
-data$BMI <- (data$BMI^best_lambda - 1) / best_lambda
-model_eating_u <- lm(BMI~FAVC+ FCVC+ CAEC+ CH2O+ SCC+ CALC,data)
+data2 <- data
+data2$BMI <- (data$BMI^best_lambda - 1) / best_lambda
+model_eating_u <- lm(BMI~FAVC+ CAEC+ SCC+ CALC+ FCVC+ CH2O,data2)
+cap <- paste("Residuals with lambda=", best_lambda)
+plot(model_eating_u, which=c(1,2), caption = cap)
+```
+Next, we try Weighted Least Squared Regression:
+```{r, fig.width=6, fig.height=4}
+wt <- 1/lm(abs(model_eating_u$residuals)~model_eating_u$fitted.values)$fitted.values^2
+
+wls_model <- lm(BMI~FAVC+ CAEC+ SCC+ CALC+ FCVC+ CH2O,data, weights = wt)
 par(mfrow = c(2, 2))
-plot(model_eating_u)
-par(mfrow = c(2, 2))
+plot(wls_model, caption="Weighted Regression Residuals")
 ```
 
+# Results
+asldkjfals
 
 # Recommendations
+lkjdsafsdalkf
 
 # Conclusion
+lksajdflkjdsaf
