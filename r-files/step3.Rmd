@@ -50,6 +50,7 @@ library(ggplot2)
 :::
 
 # Abstract
+The data displayed heteroscedasticity in both hypothesis 1 and hypothesis 2.  In both cases though, we reject the null hypotheses, asserting that there is a relationship between physical activity and BMI and finding that 3 different consumption habits have an effect on BMI as well. We may consider non-linear models or a larger data-set in the future such that we could perform analysis on a specific portion of the data, due to different ages and groups having different habits that could then overlap.
 
 # Introduction
 Body Mass Index (BMI) is commonly believed to be influenced by various lifestyle and dietary factors, including food consumption habits, hydration levels, alcohol intake, and frequency of physical activity. This study aims to analyze the relationship between different consumption and activity behaviors and BMI through linear regression to determine whether any particular habit has a significant impact on BMI. Using a dataset containing information on dietary patterns from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition), we explore the link between consumption habits and BMI.
@@ -62,15 +63,15 @@ We would like to focus on two key research questions:
 
 $$
 \begin{aligned}
-H_0&: \text{No particular consumption habit has any significant effect on BMI} \\
-H_A&: \text{At least 1 consumption habit has a significant effect on BMI}
+H_0&: \text{Frequency of physical activity has no significant impact on BMI} \\
+H_A&: \text{Frequency of physical activity has a significant impact on BMI}
 \end{aligned}
 $$
 2) Do particular consumption habits have any significant impact on BMI? (MLR)
 $$
 \begin{aligned}
-H_0&: \text{Frequency of physical activity has no significant impact on BMI} \\
-H_A&: \text{Frequency of physical activity has a significant impact on BM}
+H_0&: \text{No particular consumption habit has any significant effect on BMI} \\
+H_A&: \text{At least 1 consumption habit has a significant effect on BMI}
 \end{aligned}
 $$
 
@@ -344,4 +345,6 @@ For our multivariable regression model using eating habits, we had to go through
 With regards to our attempt at linear regression, an alternate approach could be to consider non-linear models, such as a neural network. Many of the residual assumptions we were struggling to meet would no longer be required.  So, this could potentially capture more variance in the data and decrease the Mean Standard Error. 
 
 # Conclusion
-dffda
+In conclusion we can say that men generally have a lower BMI by half a point, likely due to physiology.  Eating vegetables and monitoring calories typically results in a lower BMI than otherwise.  It his hard to say how much of an effect that alcohol consumption has, but both "often" and "sometimes" had markedly higher, significant levels of BMI.  Several of our original variables and levels were insignificant, but we were able to combine them.  Even then, they do not appear to be a perfect fit, as we have a rather low $R^2$ even with the corrections in place.
+
+The model itself, along with the data, likely wasn't able to accurately capture all of the factors that can be linked with BMI, and much of the original data was of integers and categorical, resulting in many factors and bloat.  In this situation, it would be best to try non-linear models and see if they can account for the data better, or a larger data-set that doesn't limit the majority of the answers to it to being integers such as "How often do you eat vegetables with meals?" getting the response "3".
