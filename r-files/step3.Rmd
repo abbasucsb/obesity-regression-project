@@ -175,7 +175,7 @@ $$
 
 Thus, the null hypothesis states that there is no linear relationship between BMI and frequency of physical activity and the alternative hypothesis is that there exists a linear relationship between BMI and frequency of physical activity.
 Our linear model is as follows
-$$ BMI=\beta_0+\beta_1Age+e $$
+$$ BMI=\beta_0+\beta_1FAF+e $$
 ```{r}
 obesityData<- read.csv('../data/data-cleaned.csv')
 # Fit linear model
